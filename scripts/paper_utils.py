@@ -46,12 +46,15 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-# Initialize cache with 24-hour TTL and 100MB size limit
+# Initialize cache with topic-aware TTL and 100MB size limit
 cache = diskcache.Cache(
     str(CACHE_DIR),
     size_limit=100 * 1024 * 1024,  # 100MB
     eviction_policy='least-recently-used'
 )
+
+# Default cache TTL (will be overridden by topic-specific TTLs)
+DEFAULT_CACHE_TTL = 24 * 3600  # 24 hours in seconds
 
 # Rate limiting tracking
 _last_api_call = {}
@@ -187,26 +190,58 @@ def get_cache_key(query: str, source: str) -> str:
     return hashlib.sha256(combined.encode()).hexdigest()
 
 
-def cache_results(query: str, results: List[Dict], source: str) -> None:
+def cache_results(query: str, results: List[Dict], source: str, topic: str = None) -> None:
     """
-    Cache search results with 24-hour TTL.
+    Cache search results with topic-aware TTL.
 
     Args:
         query: Original search query
         results: List of paper results
         source: API source name
+        topic: Paper topic for custom TTL (optional, auto-detected if not provided)
+
+    Topic-specific cache TTLs:
+    - epilepsy_clinical: 7 days
+    - methods_reviews/foundational: 30 days
+    - general: 24 hours
     """
     cache_key = get_cache_key(query, source)
+
+    # Determine TTL based on topic
+    ttl_seconds = DEFAULT_CACHE_TTL
+
+    if topic:
+        try:
+            from topic_classifier import TopicClassifier
+            classifier = TopicClassifier()
+            ttl_hours = classifier.get_ttl(topic)
+            ttl_seconds = ttl_hours * 3600
+        except Exception as e:
+            logger.warning(f"Could not use topic-specific TTL: {e}")
+    elif results:
+        # Auto-classify from first result
+        try:
+            from topic_classifier import classify_paper
+            title = results[0].get('title', '')
+            abstract = results[0].get('abstract', '')
+            detected_topic, ttl_hours = classify_paper(title, abstract)
+            ttl_seconds = ttl_hours * 3600
+            topic = detected_topic
+            logger.info(f"Auto-classified as '{detected_topic}' (TTL: {ttl_hours}h)")
+        except Exception as e:
+            logger.debug(f"Could not auto-classify topic: {e}")
+
     cache_entry = {
         'results': results,
         'timestamp': datetime.now().isoformat(),
         'source': source,
-        'query_hash': cache_key
+        'query_hash': cache_key,
+        'topic': topic,
+        'ttl_hours': ttl_seconds / 3600
     }
 
-    # Set with 24-hour expiration
-    cache.set(cache_key, cache_entry, expire=86400)
-    logger.info(f"Cached {len(results)} results for query from {source}")
+    cache.set(cache_key, cache_entry, expire=ttl_seconds)
+    logger.info(f"Cached {len(results)} results from {source} (TTL: {ttl_seconds/3600:.1f}h)")
 
 
 def get_cached_results(query: str, source: str) -> Optional[List[Dict]]:
