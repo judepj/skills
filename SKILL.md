@@ -1,12 +1,22 @@
 ---
 name: science-grounded
-version: 1.1.0
+version: 1.2.0
 description: Prevent scientific hallucinations by requiring verified sources for all research claims
 author: Science-Grounded Research Assistant
 tags: [research, science, literature-search, anti-hallucination, neuroscience, epilepsy]
 ---
 
 ## Changelog
+
+### v1.2.0 (2025-12-12)
+**Advanced Features Release**
+
+- ✨ **Smart PDF Screening**: Downloads arXiv PDFs, extracts full text, scores relevance
+- 🎯 **Topic-Based Caching**: Epilepsy papers cached 7 days, reviews 30 days (was 24h for all)
+- 🧠 **arXiv Neuroscience Focus**: Optional q-bio.NC filtering for computational neuroscience
+- 🤖 **Relevance Scorer**: 8-category keyword system (core, modality, regions, neuromodulation, etc.)
+- ♻️ **Auto-Cleanup**: Temporary PDFs deleted after screening
+- 🧪 **Tested**: All features working, epilepsy queries cached longer
 
 ### v1.1.0 (2025-12-12)
 **Mild Improvements Release**
