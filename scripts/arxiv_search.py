@@ -66,7 +66,8 @@ class ArxivSearch:
         self.api_name = "arxiv"
 
     def search(self, query: str, limit: int = DEFAULT_LIMIT,
-              use_cache: bool = True, filter_categories: bool = True) -> List[Dict]:
+              use_cache: bool = True, filter_categories: bool = True,
+              neuro_only: bool = False) -> List[Dict]:
         """
         Search for papers on arXiv.
 
@@ -75,6 +76,7 @@ class ArxivSearch:
             limit: Maximum number of results (max 50)
             use_cache: Whether to use cached results
             filter_categories: Filter to relevant categories only
+            neuro_only: If True, restrict to q-bio.NC (neuroscience) only
 
         Returns:
             List of paper dictionaries with standardized format
@@ -94,7 +96,7 @@ class ArxivSearch:
                 return cached[:limit]
 
         # Perform search
-        papers = self._search_papers(clean_query, min(limit * 2, MAX_RESULTS), filter_categories)
+        papers = self._search_papers(clean_query, min(limit * 2, MAX_RESULTS), filter_categories, neuro_only)
 
         # Cache results if successful
         if papers:
@@ -104,7 +106,7 @@ class ArxivSearch:
         sorted_papers = self._sort_arxiv_papers(papers)
         return sorted_papers[:limit]
 
-    def _search_papers(self, query: str, limit: int, filter_categories: bool) -> List[Dict]:
+    def _search_papers(self, query: str, limit: int, filter_categories: bool, neuro_only: bool = False) -> List[Dict]:
         """
         Internal method to search papers via arXiv API.
 
@@ -112,6 +114,7 @@ class ArxivSearch:
             query: Sanitized search query
             limit: Number of results to retrieve
             filter_categories: Whether to filter by relevant categories
+            neuro_only: Restrict to neuroscience (q-bio.NC) only
 
         Returns:
             List of paper dictionaries
@@ -124,7 +127,11 @@ class ArxivSearch:
             logger.info(f"Searching arXiv for: {query[:50]}...")
 
             # Build arXiv query
-            if filter_categories:
+            if neuro_only:
+                # Restrict to neuroscience only
+                full_query = f'({query}) AND cat:q-bio.NC'
+                logger.info("Filtering to neuroscience (q-bio.NC) only")
+            elif filter_categories:
                 # Add category filtering to query
                 cat_query = ' OR '.join([f'cat:{cat}' for cat in RELEVANT_CATEGORIES])
                 full_query = f'({query}) AND ({cat_query})'
