@@ -1,0 +1,697 @@
+{
+  "papers": {
+    "doi_10.1234_test.2024": {
+      "paper_id": "doi_10.1234_test.2024",
+      "status": "pdf_reviewed",
+      "api_metadata": {
+        "title": "Test Paper on Epileptor Models",
+        "authors": [
+          "Smith, J.",
+          "Jones, A."
+        ],
+        "year": 2024,
+        "journal": "Brain",
+        "doi": "10.1234/test.2024",
+        "arxiv_id": null,
+        "pmid": null,
+        "citation_count": 50,
+        "impact_score": 150
+      },
+      "search_queries": [
+        "epileptor model test"
+      ],
+      "first_seen": "2025-10-31T18:07:59.642884",
+      "last_updated": "2025-10-31T18:07:59.647002",
+      "pdf_requested_date": "2025-10-31T18:07:59.643662",
+      "pdf_reviewed_date": "2025-10-31T18:07:59.646994",
+      "review": {
+        "notes": "Excellent methodology. Relevant to seizure prediction.",
+        "is_valuable": true,
+        "reviewed_at": "2025-10-31T18:07:59.646998"
+      },
+      "filing_suggestion": {
+        "folder": "/NeuroDynamics/literature/",
+        "filename": "DynSys_15_EpileptorTest_Smith_2024",
+        "suggested_at": "2025-10-31T18:07:59.647000"
+      }
+    },
+    "doi_10.1016_j.yebeh.2023.109175": {
+      "paper_id": "doi_10.1016_j.yebeh.2023.109175",
+      "status": "api_only",
+      "api_metadata": {
+        "title": "Personalized whole brain modeling of status epilepticus.",
+        "authors": [
+          "Dollomaja, Borana",
+          "Makhalova, Julia",
+          "Wang, Huifang",
+          "Bartolomei, Fabrice",
+          "Jirsa, Viktor"
+        ],
+        "year": 2023,
+        "journal": "Epilepsy & behavior : E&B",
+        "doi": "10.1016/j.yebeh.2023.109175",
+        "arxiv_id": null,
+        "pmid": "37003103",
+        "citation_count": 0,
+        "impact_score": 3.0
+      },
+      "search_queries": [
+        "Jirsa Epileptor seizure model"
+      ],
+      "first_seen": "2025-10-31T18:10:28.970334",
+      "last_updated": "2025-10-31T18:10:28.970337"
+    },
+    "doi_10.1093_brain_awu133": {
+      "paper_id": "doi_10.1093_brain_awu133",
+      "status": "api_only",
+      "api_metadata": {
+        "title": "On the nature of seizure dynamics.",
+        "authors": [
+          "Jirsa, Viktor K",
+          "Stacey, William C",
+          "Quilichini, Pascale P",
+          "Ivanov, Anton I",
+          "Bernard, Christophe"
+        ],
+        "year": 2014,
+        "journal": "Brain : a journal of neurology",
+        "doi": "10.1093/brain/awu133",
+        "arxiv_id": null,
+        "pmid": "24919973",
+        "citation_count": 0,
+        "impact_score": 2.2
+      },
+      "search_queries": [
+        "Jirsa Epileptor seizure model"
+      ],
+      "first_seen": "2025-10-31T18:10:28.970803",
+      "last_updated": "2025-10-31T18:10:28.970809"
+    },
+    "doi_10.1371_journal.pcbi.1011903": {
+      "paper_id": "doi_10.1371_journal.pcbi.1011903",
+      "status": "api_only",
+      "api_metadata": {
+        "title": "Bifurcations and bursting in the Epileptor.",
+        "authors": [
+          "Saggio, Maria Luisa",
+          "Jirsa, Viktor"
+        ],
+        "year": 2024,
+        "journal": "PLoS computational biology",
+        "doi": "10.1371/journal.pcbi.1011903",
+        "arxiv_id": null,
+        "pmid": "38446814",
+        "citation_count": 0,
+        "impact_score": 1.6500000000000001
+      },
+      "search_queries": [
+        "Jirsa Epileptor seizure model"
+      ],
+      "first_seen": "2025-10-31T18:10:28.974994",
+      "last_updated": "2025-10-31T18:10:28.975002"
+    },
+    "doi_10.1016_S1474-4422(23)00008-X": {
+      "paper_id": "doi_10.1016_S1474-4422(23)00008-X",
+      "status": "pdf_reviewed",
+      "api_metadata": {
+        "title": "Personalised virtual brain models in epilepsy",
+        "authors": [
+          "Jirsa, Viktor",
+          "Wang, Huifang",
+          "Triebkorn, Paul"
+        ],
+        "year": 2023,
+        "journal": "The Lancet Neurology",
+        "doi": "10.1016/S1474-4422(23)00008-X",
+        "arxiv_id": null,
+        "pmid": "36972720",
+        "citation_count": 85,
+        "impact_score": 255
+      },
+      "search_queries": [
+        "epileptor virtual brain"
+      ],
+      "first_seen": "2025-10-31T18:11:04.300208",
+      "last_updated": "2025-10-31T18:11:55.029804",
+      "pdf_requested_date": "2025-10-31T18:11:04.300797",
+      "pdf_reviewed_date": "2025-10-31T18:11:55.029796",
+      "review": {
+        "notes": "\nExcellent paper on personalized virtual brain modeling.\nStrong methodology using patient-specific connectivity from MRI/DTI.\nValidated on 50+ patients with drug-resistant epilepsy.\nThe Virtual Brain platform is open-source and available.\nKey innovation: Combines structural connectivity with Epileptor dynamics.\nClinical impact: Could improve surgical planning and reduce failures.\n",
+        "is_valuable": true,
+        "reviewed_at": "2025-10-31T18:11:55.029802"
+      }
+    },
+    "doi_10.1111_epi.17446": {
+      "paper_id": "doi_10.1111_epi.17446",
+      "status": "api_only",
+      "api_metadata": {
+        "title": "Reliability of visual review of intracranial electroencephalogram in identifying the seizure onset zone: A systematic review and implications for the accuracy of automated methods.",
+        "authors": [
+          "Flanary, James",
+          "Daly, Samuel R",
+          "Bakker, Caitlin",
+          "Herman, Alexander B",
+          "Park, Michael C"
+        ],
+        "year": 2023,
+        "journal": "Epilepsia",
+        "doi": "10.1111/epi.17446",
+        "arxiv_id": null,
+        "pmid": "36300659",
+        "citation_count": 0,
+        "impact_score": 3.3000000000000003
+      },
+      "search_queries": [
+        "deep learning intracranial EEG review"
+      ],
+      "first_seen": "2025-10-31T18:14:44.647755",
+      "last_updated": "2025-10-31T18:14:44.647759"
+    },
+    "arxiv_2502.17213v2": {
+      "paper_id": "arxiv_2502.17213v2",
+      "status": "api_only",
+      "api_metadata": {
+        "title": "Deep Learning-Powered Electrical Brain Signals Analysis: Advancing Neurological Diagnostics",
+        "authors": [
+          "Jiahe Li",
+          "Xin Chen",
+          "Fanqi Shen",
+          "Junru Chen",
+          "Yuxin Liu"
+        ],
+        "year": 2025,
+        "journal": "arXiv preprint",
+        "doi": null,
+        "arxiv_id": "2502.17213v2",
+        "pmid": null,
+        "citation_count": 0,
+        "impact_score": 4.4
+      },
+      "search_queries": [
+        "deep learning EEG intracranial seizure"
+      ],
+      "first_seen": "2025-10-31T18:15:05.391875",
+      "last_updated": "2025-10-31T18:15:05.391878"
+    },
+    "doi_10.3390_brainsci14111090": {
+      "paper_id": "doi_10.3390_brainsci14111090",
+      "status": "api_only",
+      "api_metadata": {
+        "title": "Seizure Onset Zone Detection Based on Convolutional Neural Networks and EEG Signals.",
+        "authors": [
+          "Kuang, Zhejun",
+          "Guo, Liming",
+          "Wang, Jingrui",
+          "Zhao, Jian",
+          "Wang, Liu"
+        ],
+        "year": 2024,
+        "journal": "Brain sciences",
+        "doi": "10.3390/brainsci14111090",
+        "arxiv_id": null,
+        "pmid": "39595852",
+        "citation_count": 0,
+        "impact_score": 3.3000000000000003
+      },
+      "search_queries": [
+        "AI deep learning EEG review"
+      ],
+      "first_seen": "2025-10-31T18:15:38.095142",
+      "last_updated": "2025-10-31T18:15:38.095146"
+    },
+    "doi_10.1001_jamaneurol.2023.1645": {
+      "paper_id": "doi_10.1001_jamaneurol.2023.1645",
+      "status": "api_only",
+      "api_metadata": {
+        "title": "Automated Interpretation of Clinical Electroencephalograms Using Artificial Intelligence.",
+        "authors": [
+          "Tveit, Jesper",
+          "Aurlien, Harald",
+          "Plis, Sergey",
+          "Calhoun, Vince D",
+          "Tatum, William O"
+        ],
+        "year": 2023,
+        "journal": "JAMA neurology",
+        "doi": "10.1001/jamaneurol.2023.1645",
+        "arxiv_id": null,
+        "pmid": "37338864",
+        "citation_count": 0,
+        "impact_score": 3.3000000000000003
+      },
+      "search_queries": [
+        "AI deep learning EEG review"
+      ],
+      "first_seen": "2025-10-31T18:15:38.095948",
+      "last_updated": "2025-10-31T18:15:38.095955"
+    },
+    "doi_10.1111_epi.17833": {
+      "paper_id": "doi_10.1111_epi.17833",
+      "status": "api_only",
+      "api_metadata": {
+        "title": "Artificial intelligence in epilepsy phenotyping.",
+        "authors": [
+          "Knight, Andrew",
+          "Gschwind, Tilo",
+          "Galer, Peter",
+          "Worrell, Gregory A",
+          "Litt, Brian"
+        ],
+        "year": 2025,
+        "journal": "Epilepsia",
+        "doi": "10.1111/epi.17833",
+        "arxiv_id": null,
+        "pmid": "37983589",
+        "citation_count": 0,
+        "impact_score": 3.3000000000000003
+      },
+      "search_queries": [
+        "AI deep learning EEG review"
+      ],
+      "first_seen": "2025-10-31T18:15:38.100319",
+      "last_updated": "2025-10-31T18:15:38.100326"
+    },
+    "doi_10.1002_ana.27168": {
+      "paper_id": "doi_10.1002_ana.27168",
+      "status": "api_only",
+      "api_metadata": {
+        "title": "Diagnosing Epilepsy with Normal Interictal EEG Using Dynamic Network Models.",
+        "authors": [
+          "Myers, Patrick",
+          "Gunnarsdottir, Kristin M",
+          "Li, Adam",
+          "Razskazovskiy, Vlad",
+          "Craley, Jeff"
+        ],
+        "year": 2025,
+        "journal": "Annals of neurology",
+        "doi": "10.1002/ana.27168",
+        "arxiv_id": null,
+        "pmid": "39817338",
+        "citation_count": 0,
+        "impact_score": 3.3000000000000003
+      },
+      "search_queries": [
+        "AI deep learning EEG review"
+      ],
+      "first_seen": "2025-10-31T18:15:38.104275",
+      "last_updated": "2025-10-31T18:15:38.104286"
+    },
+    "doi_10.1016_j.jneumeth.2025.110561": {
+      "paper_id": "doi_10.1016_j.jneumeth.2025.110561",
+      "status": "api_only",
+      "api_metadata": {
+        "title": "Automated EEG signal processing: A comprehensive investigation into preprocessing techniques and sub-band extraction for enhanced brain-computer interface applications.",
+        "authors": [
+          "Balam, Venkata Phanikrishna"
+        ],
+        "year": 2025,
+        "journal": "Journal of neuroscience methods",
+        "doi": "10.1016/j.jneumeth.2025.110561",
+        "arxiv_id": null,
+        "pmid": "40914440",
+        "citation_count": 0,
+        "impact_score": 3.0
+      },
+      "search_queries": [
+        "AI deep learning EEG review"
+      ],
+      "first_seen": "2025-10-31T18:15:38.108065",
+      "last_updated": "2025-10-31T18:15:38.108072"
+    },
+    "doi_10.1111_epi.17259": {
+      "paper_id": "doi_10.1111_epi.17259",
+      "status": "api_only",
+      "api_metadata": {
+        "title": "Seizure detection with deep neural networks for review of two-channel electroencephalogram.",
+        "authors": [
+          "Hartmann, Manfred",
+          "Koren, Johannes",
+          "Baumgartner, Christoph",
+          "Duun-Henriksen, Jonas",
+          "Gritsch, Gerhard"
+        ],
+        "year": 2023,
+        "journal": "Epilepsia",
+        "doi": "10.1111/epi.17259",
+        "arxiv_id": null,
+        "pmid": "35416283",
+        "citation_count": 0,
+        "impact_score": 3.0
+      },
+      "search_queries": [
+        "AI deep learning EEG review"
+      ],
+      "first_seen": "2025-10-31T18:15:38.111981",
+      "last_updated": "2025-10-31T18:15:38.111987"
+    },
+    "doi_10.1038_s41582-024-00965-9": {
+      "paper_id": "doi_10.1038_s41582-024-00965-9",
+      "status": "filed",
+      "api_metadata": {
+        "title": "Artificial intelligence in epilepsy - applications and pathways to the clinic.",
+        "authors": [
+          "Lucas, Alfredo",
+          "Revell, Andrew",
+          "Davis, Kathryn A"
+        ],
+        "year": 2024,
+        "journal": "Nature reviews. Neurology",
+        "doi": "10.1038/s41582-024-00965-9",
+        "arxiv_id": null,
+        "pmid": "38720105",
+        "citation_count": 0,
+        "impact_score": 3.0
+      },
+      "search_queries": [
+        "AI deep learning EEG review",
+        "AI epilepsy review"
+      ],
+      "first_seen": "2025-10-31T18:15:38.115738",
+      "last_updated": "2025-10-31T18:20:39.812502",
+      "pdf_reviewed_date": "2025-10-31T18:19:03.103183",
+      "review": {
+        "notes": "\nComprehensive review of AI applications in epilepsy.\nCovers both scalp EEG and intracranial EEG (sEEG/ECoG) analysis.\nDiscusses clinical translation challenges and regulatory pathways.\nImportant sections on seizure detection, prediction, and SOZ localization.\nHighly relevant for understanding current state of AI in epilepsy research.\n",
+        "is_valuable": true,
+        "reviewed_at": "2025-10-31T18:19:03.103189"
+      },
+      "filed_at": "/Users/jsavarraj/Dropbox/GPTQueries/Brunton/neural_ODE/seizure_dynamics/ML_1_ArtificialIntelligenceInEpilepsy_Lucas_2024.pdf",
+      "filed_date": "2025-10-31T18:20:39.812490"
+    },
+    "doi_10.1016_j.yebeh.2024.109736": {
+      "paper_id": "doi_10.1016_j.yebeh.2024.109736",
+      "status": "api_only",
+      "api_metadata": {
+        "title": "Artificial intelligence/machine learning for epilepsy and seizure diagnosis.",
+        "authors": [
+          "Han, Kenneth",
+          "Liu, Chris",
+          "Friedman, Daniel"
+        ],
+        "year": 2024,
+        "journal": "Epilepsy & behavior : E&B",
+        "doi": "10.1016/j.yebeh.2024.109736",
+        "arxiv_id": null,
+        "pmid": "38636146",
+        "citation_count": 0,
+        "impact_score": 3.0
+      },
+      "search_queries": [
+        "AI deep learning EEG review"
+      ],
+      "first_seen": "2025-10-31T18:15:38.119711",
+      "last_updated": "2025-10-31T18:15:38.119719"
+    },
+    "doi_10.1111_epi.17774": {
+      "paper_id": "doi_10.1111_epi.17774",
+      "status": "api_only",
+      "api_metadata": {
+        "title": "Artificial intelligence-enhanced epileptic seizure detection by wearables.",
+        "authors": [
+          "Yu, Shuang",
+          "El Atrache, Rima",
+          "Tang, Jianbin",
+          "Jackson, Michele",
+          "Makarucha, Adam"
+        ],
+        "year": 2023,
+        "journal": "Epilepsia",
+        "doi": "10.1111/epi.17774",
+        "arxiv_id": null,
+        "pmid": "37715325",
+        "citation_count": 0,
+        "impact_score": 3.0
+      },
+      "search_queries": [
+        "AI deep learning EEG review"
+      ],
+      "first_seen": "2025-10-31T18:15:38.123539",
+      "last_updated": "2025-10-31T18:15:38.123545"
+    },
+    "doi_10.1111_epi.18082": {
+      "paper_id": "doi_10.1111_epi.18082",
+      "status": "api_only",
+      "api_metadata": {
+        "title": "Generalizability of electroencephalographic interpretation using artificial intelligence: An external validation study.",
+        "authors": [
+          "Mansilla, Daniel",
+          "Tveit, Jesper",
+          "Aurlien, Harald",
+          "Avigdor, Tamir",
+          "Ros-Castello, Victoria"
+        ],
+        "year": 2024,
+        "journal": "Epilepsia",
+        "doi": "10.1111/epi.18082",
+        "arxiv_id": null,
+        "pmid": "39141002",
+        "citation_count": 0,
+        "impact_score": 3.0
+      },
+      "search_queries": [
+        "AI deep learning EEG review"
+      ],
+      "first_seen": "2025-10-31T18:15:38.127411",
+      "last_updated": "2025-10-31T18:15:38.127418"
+    },
+    "doi_10.1101_716290": {
+      "paper_id": "doi_10.1101_716290",
+      "status": "api_only",
+      "api_metadata": {
+        "title": "Post-learning replay of hippocampal-striatal activity is biased by reward-prediction signals",
+        "authors": [
+          "Roscow, E. L.",
+          "Howe, T.",
+          "Lepora, N. F.",
+          "Jones, M. W."
+        ],
+        "year": 2025,
+        "journal": "biorxiv preprint",
+        "doi": "10.1101/716290",
+        "arxiv_id": null,
+        "pmid": null,
+        "citation_count": 0,
+        "impact_score": 4.0
+      },
+      "search_queries": [
+        "deep learning EEG seizure"
+      ],
+      "first_seen": "2025-10-31T18:16:08.876148",
+      "last_updated": "2025-10-31T18:16:08.876152"
+    },
+    "doi_10.1101_2020.02.18.954354": {
+      "paper_id": "doi_10.1101_2020.02.18.954354",
+      "status": "api_only",
+      "api_metadata": {
+        "title": "An anatomical substrate of credit assignment in reinforcement learning",
+        "authors": [
+          "Kornfeld, J. M. R.",
+          "Wang, Y.",
+          "Januszewski, M.",
+          "Rother, A.",
+          "Schubert, P. J."
+        ],
+        "year": 2025,
+        "journal": "biorxiv preprint",
+        "doi": "10.1101/2020.02.18.954354",
+        "arxiv_id": null,
+        "pmid": null,
+        "citation_count": 0,
+        "impact_score": 4.0
+      },
+      "search_queries": [
+        "deep learning EEG seizure"
+      ],
+      "first_seen": "2025-10-31T18:16:08.877311",
+      "last_updated": "2025-10-31T18:16:08.877317"
+    },
+    "doi_10.1101_2020.06.30.181149": {
+      "paper_id": "doi_10.1101_2020.06.30.181149",
+      "status": "api_only",
+      "api_metadata": {
+        "title": "Chronic Pb2+ Exposure Causes Hippocampal Network Hypersynchrony, Absence Seizures, and Sensorimotor Deficits",
+        "authors": [
+          "Schultheiss, N. W.",
+          "McGlothan, J. L.",
+          "Guilarte, T. R.",
+          "Allen, T. A."
+        ],
+        "year": 2025,
+        "journal": "biorxiv preprint",
+        "doi": "10.1101/2020.06.30.181149",
+        "arxiv_id": null,
+        "pmid": null,
+        "citation_count": 0,
+        "impact_score": 4.0
+      },
+      "search_queries": [
+        "deep learning EEG seizure"
+      ],
+      "first_seen": "2025-10-31T18:16:08.881981",
+      "last_updated": "2025-10-31T18:16:08.881987"
+    },
+    "doi_10.1101_2020.09.02.280156": {
+      "paper_id": "doi_10.1101_2020.09.02.280156",
+      "status": "api_only",
+      "api_metadata": {
+        "title": "Chronic Intermittent Ethanol Activates CHOP in Striatal Microglia and Exacerbates Ethanol Withdrawal",
+        "authors": [
+          "Williams, R. G.",
+          "Dufour, B. D.",
+          "Coffey, K. R.",
+          "Lesiak, A. J.",
+          "Nickelson, W. B."
+        ],
+        "year": 2025,
+        "journal": "biorxiv preprint",
+        "doi": "10.1101/2020.09.02.280156",
+        "arxiv_id": null,
+        "pmid": null,
+        "citation_count": 0,
+        "impact_score": 4.0
+      },
+      "search_queries": [
+        "deep learning EEG seizure"
+      ],
+      "first_seen": "2025-10-31T18:16:08.886236",
+      "last_updated": "2025-10-31T18:16:08.886242"
+    },
+    "doi_10.1101_2020.12.22.424037": {
+      "paper_id": "doi_10.1101_2020.12.22.424037",
+      "status": "api_only",
+      "api_metadata": {
+        "title": "Temporal stimulus segmentation by reinforcement learning in populations of spiking neurons",
+        "authors": [
+          "Le Donne, L.",
+          "Chan, L. C.",
+          "Urbanczik, R.",
+          "Senn, W.",
+          "La Camera, G."
+        ],
+        "year": 2025,
+        "journal": "biorxiv preprint",
+        "doi": "10.1101/2020.12.22.424037",
+        "arxiv_id": null,
+        "pmid": null,
+        "citation_count": 0,
+        "impact_score": 4.0
+      },
+      "search_queries": [
+        "deep learning EEG seizure"
+      ],
+      "first_seen": "2025-10-31T18:16:08.890097",
+      "last_updated": "2025-10-31T18:16:08.890103"
+    },
+    "doi_10.1101_2021.08.04.455133": {
+      "paper_id": "doi_10.1101_2021.08.04.455133",
+      "status": "api_only",
+      "api_metadata": {
+        "title": "Default Mode Network Connectivity Predicts Individual Differences in Long-Term Forgetting: Evidence for Storage Degradation, not Retrieval Failure",
+        "authors": [
+          "Xu, Y.",
+          "Prat, C. S.",
+          "Sense, F.",
+          "van Rijn, H.",
+          "Stocco, A."
+        ],
+        "year": 2025,
+        "journal": "biorxiv preprint",
+        "doi": "10.1101/2021.08.04.455133",
+        "arxiv_id": null,
+        "pmid": null,
+        "citation_count": 0,
+        "impact_score": 4.0
+      },
+      "search_queries": [
+        "deep learning EEG seizure"
+      ],
+      "first_seen": "2025-10-31T18:16:08.893878",
+      "last_updated": "2025-10-31T18:16:08.893884"
+    },
+    "doi_10.1101_2021.12.23.474034": {
+      "paper_id": "doi_10.1101_2021.12.23.474034",
+      "status": "api_only",
+      "api_metadata": {
+        "title": "Cerebellar acceleration of learning in an evidence-accumulation task",
+        "authors": [
+          "Oostland, M.",
+          "Kislin, M.",
+          "Chen, Y.",
+          "Chen, T.",
+          "Venditto, S. J. C."
+        ],
+        "year": 2025,
+        "journal": "biorxiv preprint",
+        "doi": "10.1101/2021.12.23.474034",
+        "arxiv_id": null,
+        "pmid": null,
+        "citation_count": 0,
+        "impact_score": 4.0
+      },
+      "search_queries": [
+        "deep learning EEG seizure"
+      ],
+      "first_seen": "2025-10-31T18:16:08.897645",
+      "last_updated": "2025-10-31T18:16:08.897651"
+    },
+    "doi_10.1101_2022.01.18.476852": {
+      "paper_id": "doi_10.1101_2022.01.18.476852",
+      "status": "api_only",
+      "api_metadata": {
+        "title": "Task-related changes in aperiodic activity are related to visual working memory capacity independent of event-related potentials and alpha oscillations",
+        "authors": [
+          "Virtue-Griffiths, S. E.",
+          "Fornito, A.",
+          "Thompson, S.",
+          "Biabani, M.",
+          "Tiego, J."
+        ],
+        "year": 2025,
+        "journal": "biorxiv preprint",
+        "doi": "10.1101/2022.01.18.476852",
+        "arxiv_id": null,
+        "pmid": null,
+        "citation_count": 0,
+        "impact_score": 4.0
+      },
+      "search_queries": [
+        "deep learning EEG seizure"
+      ],
+      "first_seen": "2025-10-31T18:16:08.901302",
+      "last_updated": "2025-10-31T18:16:08.901308"
+    },
+    "doi_10.1101_2022.02.08.479618": {
+      "paper_id": "doi_10.1101_2022.02.08.479618",
+      "status": "api_only",
+      "api_metadata": {
+        "title": "Astrocytic GABA transport contributes to abnormal inhibition in Fragile X Syndrome",
+        "authors": [
+          "Wagner, V.",
+          "Thapa, R.",
+          "Kulinich, A. O.",
+          "Varallo, A.",
+          "Wimberly, J."
+        ],
+        "year": 2025,
+        "journal": "biorxiv preprint",
+        "doi": "10.1101/2022.02.08.479618",
+        "arxiv_id": null,
+        "pmid": null,
+        "citation_count": 0,
+        "impact_score": 4.0
+      },
+      "search_queries": [
+        "deep learning EEG seizure"
+      ],
+      "first_seen": "2025-10-31T18:16:08.905014",
+      "last_updated": "2025-10-31T18:16:08.908766"
+    }
+  },
+  "statistics": {
+    "total_searched": 26,
+    "pdfs_requested": 2,
+    "pdfs_reviewed": 0,
+    "papers_filed": 1
+  },
+  "last_updated": "2025-10-31T18:20:39.812505"
+}

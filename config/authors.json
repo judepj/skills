@@ -1,0 +1,220 @@
+{
+  "computational_epilepsy": {
+    "researchers": [
+      {
+        "name": "Viktor Jirsa",
+        "affiliation": "Aix-Marseille University",
+        "expertise": ["VEP model", "Epileptor", "virtual brain", "seizure dynamics"],
+        "weight": 1.5
+      },
+      {
+        "name": "Fabrice Bartolomei",
+        "affiliation": "Aix-Marseille University",
+        "expertise": ["epileptogenic networks", "SEEG", "connectivity"],
+        "weight": 1.4
+      },
+      {
+        "name": "William Stacey",
+        "affiliation": "University of Michigan",
+        "expertise": ["seizure prediction", "computational models", "high-frequency oscillations"],
+        "weight": 1.3
+      },
+      {
+        "name": "Marc Goodfellow",
+        "affiliation": "University of Exeter",
+        "expertise": ["dynamical systems", "seizure transitions", "brain networks"],
+        "weight": 1.2
+      },
+      {
+        "name": "Maxime Guye",
+        "affiliation": "Aix-Marseille University",
+        "expertise": ["epilepsy networks", "MRI", "connectivity"],
+        "weight": 1.2
+      }
+    ]
+  },
+  "clinical_epilepsy": {
+    "researchers": [
+      {
+        "name": "Dario Englot",
+        "affiliation": "Vanderbilt University",
+        "expertise": ["epilepsy surgery", "network connectivity", "outcomes"],
+        "weight": 1.3
+      },
+      {
+        "name": "Jorge Gonzalez-Martinez",
+        "affiliation": "University of Pittsburgh",
+        "expertise": ["SEEG", "epilepsy surgery", "localization"],
+        "weight": 1.3
+      },
+      {
+        "name": "Gregory Worrell",
+        "affiliation": "Mayo Clinic",
+        "expertise": ["high-frequency oscillations", "seizure detection", "devices"],
+        "weight": 1.4
+      },
+      {
+        "name": "Catherine Schevon",
+        "affiliation": "Columbia University",
+        "expertise": ["microelectrode recordings", "seizure dynamics", "ictal patterns"],
+        "weight": 1.2
+      },
+      {
+        "name": "Jean Gotman",
+        "affiliation": "McGill University",
+        "expertise": ["epileptic spikes", "HFOs", "automated detection"],
+        "weight": 1.3
+      }
+    ]
+  },
+  "data_driven_methods": {
+    "researchers": [
+      {
+        "name": "Steven Brunton",
+        "affiliation": "University of Washington",
+        "expertise": ["SINDy", "data-driven discovery", "Koopman theory", "DMD"],
+        "weight": 1.5
+      },
+      {
+        "name": "J Nathan Kutz",
+        "affiliation": "University of Washington",
+        "expertise": ["DMD", "machine learning", "physics-informed ML", "Koopman"],
+        "weight": 1.5
+      },
+      {
+        "name": "Bingni Brunton",
+        "affiliation": "University of Washington",
+        "expertise": ["neural dynamics", "data analysis", "dimensionality reduction"],
+        "weight": 1.3
+      },
+      {
+        "name": "Kathleen Champion",
+        "affiliation": "University of Washington",
+        "expertise": ["SINDy", "neural networks", "equation discovery"],
+        "weight": 1.2
+      },
+      {
+        "name": "Alan Kaptanoglu",
+        "affiliation": "University of Washington",
+        "expertise": ["PySINDy", "sparse regression", "optimization"],
+        "weight": 1.2
+      }
+    ]
+  },
+  "control_theory": {
+    "researchers": [
+      {
+        "name": "Sridevi Sarma",
+        "affiliation": "Johns Hopkins University",
+        "expertise": ["brain stimulation", "control theory", "epilepsy", "neural control"],
+        "weight": 1.4
+      },
+      {
+        "name": "Danielle Bassett",
+        "affiliation": "University of Pennsylvania",
+        "expertise": ["network control", "brain networks", "controllability"],
+        "weight": 1.3
+      },
+      {
+        "name": "ShiNung Ching",
+        "affiliation": "Washington University in St. Louis",
+        "expertise": ["neural control", "anesthesia", "brain states"],
+        "weight": 1.2
+      }
+    ]
+  },
+  "causality": {
+    "researchers": [
+      {
+        "name": "Jakob Runge",
+        "affiliation": "German Aerospace Center",
+        "expertise": ["causal discovery", "PCMCI", "time series causality"],
+        "weight": 1.4
+      },
+      {
+        "name": "Schiff Steven",
+        "affiliation": "Yale University",
+        "expertise": ["causality", "neural dynamics", "computational neuroscience"],
+        "weight": 1.2
+      },
+      {
+        "name": "Anil Seth",
+        "affiliation": "University of Sussex",
+        "expertise": ["Granger causality", "consciousness", "predictive processing"],
+        "weight": 1.3
+      }
+    ]
+  },
+  "neural_modeling": {
+    "researchers": [
+      {
+        "name": "Christophe Bernard",
+        "affiliation": "Aix-Marseille University",
+        "expertise": ["epilepsy", "computational models", "seizure mechanisms"],
+        "weight": 1.3
+      },
+      {
+        "name": "John Terry",
+        "affiliation": "University of Birmingham",
+        "expertise": ["mathematical neuroscience", "epilepsy models", "dynamical systems"],
+        "weight": 1.3
+      },
+      {
+        "name": "Kaspar Schindler",
+        "affiliation": "University of Bern",
+        "expertise": ["seizure dynamics", "EEG analysis", "epilepsy"],
+        "weight": 1.2
+      },
+      {
+        "name": "Mark Kramer",
+        "affiliation": "Boston University",
+        "expertise": ["rhythms", "seizures", "computational neuroscience"],
+        "weight": 1.3
+      }
+    ]
+  },
+  "signal_processing": {
+    "researchers": [
+      {
+        "name": "Behtash Babadi",
+        "affiliation": "University of Maryland",
+        "expertise": ["neural signal processing", "spectral analysis", "point processes"],
+        "weight": 1.2
+      },
+      {
+        "name": "Uri Eden",
+        "affiliation": "Boston University",
+        "expertise": ["neural data analysis", "point processes", "state-space models"],
+        "weight": 1.2
+      },
+      {
+        "name": "Emery Brown",
+        "affiliation": "MIT",
+        "expertise": ["neural signal processing", "anesthesia", "state-space models"],
+        "weight": 1.4
+      }
+    ]
+  },
+  "additional_experts": {
+    "researchers": [
+      {
+        "name": "György Buzsáki",
+        "affiliation": "NYU",
+        "expertise": ["hippocampus", "oscillations", "memory", "LFP"],
+        "weight": 1.5
+      },
+      {
+        "name": "Pascal Fries",
+        "affiliation": "Ernst Strüngmann Institute",
+        "expertise": ["gamma oscillations", "communication through coherence", "synchronization"],
+        "weight": 1.4
+      },
+      {
+        "name": "Wolf Singer",
+        "affiliation": "Max Planck Institute",
+        "expertise": ["synchronization", "binding problem", "oscillations"],
+        "weight": 1.3
+      }
+    ]
+  }
+}

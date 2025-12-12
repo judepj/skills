@@ -1,0 +1,46 @@
+============================================
+     SCIENCE-GROUNDED SKILL IMPLEMENTATION
+============================================
+
+Hello! You've been asked to implement a Claude Code skill that prevents
+scientific hallucinations by requiring verified sources.
+
+CRITICAL INSTRUCTIONS:
+---------------------
+1. READ "IMPLEMENTATION_PLAN.md" COMPLETELY before starting
+2. SAFETY IS PARAMOUNT - implement all safety features
+3. TEST EACH COMPONENT individually before integration
+4. Build in this exact order:
+   - paper_utils.py (with safety features)
+   - field_detector.py
+   - semantic_scholar_search.py
+   - other search scripts one by one
+   - SKILL.md (last!)
+
+SAFETY REQUIREMENTS:
+-------------------
+- Rate limit ALL API calls (2+ seconds)
+- Validate/sanitize ALL user input
+- Log ALL external requests
+- Implement timeouts (10s max)
+- Cache results (24h TTL)
+- Never expose API keys
+
+TESTING:
+--------
+After building each script, test it:
+  python scripts/[scriptname].py "test query"
+
+The user specifically wants you to TEST AS YOU GO.
+Show them the output of each test before proceeding.
+
+FILES TO READ:
+-------------
+1. IMPLEMENTATION_PLAN.md - Complete technical specification
+2. INFORMAL_NOTES.md - Context about the user's research
+3. requirements.txt - Python dependencies
+
+Good luck! Remember: accuracy > speed, safety > features
+
+Questions? The user works on computational neuroscience for epilepsy,
+focusing on seizure prediction using signal processing and ML.

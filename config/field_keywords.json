@@ -1,0 +1,174 @@
+{
+  "fields": {
+    "electrophysiology": {
+      "keywords": [
+        "sEEG", "EEG", "LFP", "MEG", "iEEG", "ECoG",
+        "stereoelectroencephalography", "local field potential",
+        "magnetoencephalography", "intracranial EEG",
+        "electrocorticography", "electroencephalography",
+        "electrode", "recording", "voltage", "electrical activity"
+      ],
+      "weight": 1.0,
+      "databases": ["semantic_scholar", "pubmed", "biorxiv"]
+    },
+    "epilepsy_clinical": {
+      "keywords": [
+        "epilepsy", "seizure", "ictal", "interictal", "SOZ",
+        "seizure onset zone", "epileptogenic", "epileptiform",
+        "hippocampal sclerosis", "temporal lobe epilepsy",
+        "focal epilepsy", "generalized epilepsy", "status epilepticus",
+        "antiepileptic", "AED", "refractory epilepsy", "drug resistant"
+      ],
+      "weight": 1.2,
+      "databases": ["pubmed", "semantic_scholar", "medline"]
+    },
+    "signal_processing": {
+      "keywords": [
+        "FFT", "Fourier", "wavelet", "spectrogram", "filtering",
+        "Hilbert transform", "bandpass", "lowpass", "highpass",
+        "signal processing", "time-frequency", "spectral analysis",
+        "power spectral density", "PSD", "coherence", "cross-correlation",
+        "autocorrelation", "denoising", "artifact removal"
+      ],
+      "weight": 1.0,
+      "databases": ["semantic_scholar", "arxiv", "stackexchange"]
+    },
+    "linear_algebra": {
+      "keywords": [
+        "PCA", "ICA", "DMD", "SVD", "eigenvalue", "eigenvector",
+        "principal component analysis", "independent component analysis",
+        "dynamic mode decomposition", "singular value decomposition",
+        "matrix factorization", "decomposition", "orthogonal",
+        "covariance matrix", "dimensionality reduction"
+      ],
+      "weight": 0.9,
+      "databases": ["arxiv", "semantic_scholar", "mathoverflow"]
+    },
+    "time_series": {
+      "keywords": [
+        "AR", "ARIMA", "VAR", "GARCH", "autoregressive",
+        "moving average", "time series", "forecasting",
+        "stationarity", "autocorrelation", "partial autocorrelation",
+        "Box-Jenkins", "state space model", "Kalman filter",
+        "trend", "seasonality", "lag", "difference"
+      ],
+      "weight": 0.8,
+      "databases": ["semantic_scholar", "arxiv", "stackexchange"]
+    },
+    "nonlinear_dynamics": {
+      "keywords": [
+        "Lyapunov", "attractor", "chaos", "bifurcation",
+        "nonlinear dynamics", "dynamical system", "phase space",
+        "limit cycle", "strange attractor", "fractal dimension",
+        "Poincare map", "stability analysis", "fixed point",
+        "trajectory", "ergodic", "manifold", "basin of attraction"
+      ],
+      "weight": 1.1,
+      "databases": ["arxiv", "semantic_scholar", "mathoverflow"]
+    },
+    "information_theory": {
+      "keywords": [
+        "entropy", "transfer entropy", "mutual information",
+        "KL divergence", "Shannon entropy", "Renyi entropy",
+        "conditional entropy", "information flow", "causality",
+        "Kullback-Leibler", "relative entropy", "information content",
+        "channel capacity", "redundancy", "synergy"
+      ],
+      "weight": 1.0,
+      "databases": ["arxiv", "semantic_scholar"]
+    },
+    "machine_learning": {
+      "keywords": [
+        "LSTM", "CNN", "transformer", "neural network",
+        "deep learning", "machine learning", "RNN", "GRU",
+        "convolutional", "recurrent", "attention mechanism",
+        "backpropagation", "gradient descent", "overfitting",
+        "regularization", "dropout", "batch normalization",
+        "supervised", "unsupervised", "reinforcement learning"
+      ],
+      "weight": 1.0,
+      "databases": ["arxiv", "semantic_scholar", "zenodo"]
+    },
+    "physics_informed": {
+      "keywords": [
+        "SINDy", "Koopman", "Neural ODE", "reservoir computing",
+        "physics-informed", "PINN", "sparse identification",
+        "nonlinear dynamics", "data-driven discovery",
+        "equation discovery", "symbolic regression",
+        "operator learning", "DeepONet", "FNO",
+        "Fourier neural operator", "model discovery"
+      ],
+      "weight": 1.3,
+      "databases": ["arxiv", "semantic_scholar", "zenodo"]
+    },
+    "connectivity": {
+      "keywords": [
+        "PLV", "wPLI", "coherence", "Granger causality", "PDC",
+        "phase locking value", "weighted phase lag index",
+        "partial directed coherence", "directed transfer function",
+        "DTF", "connectivity", "synchronization", "coupling",
+        "cross-frequency coupling", "PAC", "phase amplitude coupling",
+        "functional connectivity", "effective connectivity"
+      ],
+      "weight": 1.1,
+      "databases": ["semantic_scholar", "pubmed", "biorxiv"]
+    },
+    "brain_states": {
+      "keywords": [
+        "sleep", "anesthesia", "consciousness", "arousal",
+        "REM", "NREM", "slow wave", "spindle", "K-complex",
+        "wake", "drowsiness", "vigilance", "sedation",
+        "propofol", "sevoflurane", "isoflurane", "ketamine",
+        "awareness", "responsiveness", "brain state"
+      ],
+      "weight": 0.9,
+      "databases": ["pubmed", "semantic_scholar", "biorxiv"]
+    },
+    "complexity_measures": {
+      "keywords": [
+        "sample entropy", "DFA", "multifractal", "Hurst exponent",
+        "detrended fluctuation analysis", "approximate entropy",
+        "permutation entropy", "Lempel-Ziv complexity",
+        "fractal dimension", "scaling exponent", "self-similarity",
+        "long-range dependence", "1/f", "pink noise", "criticality"
+      ],
+      "weight": 1.0,
+      "databases": ["arxiv", "semantic_scholar"]
+    },
+    "graph_theory": {
+      "keywords": [
+        "network", "graph", "centrality", "modularity",
+        "small-world", "scale-free", "hub", "degree",
+        "betweenness", "closeness", "eigenvector centrality",
+        "clustering coefficient", "path length", "community detection",
+        "adjacency matrix", "Laplacian", "topology"
+      ],
+      "weight": 0.9,
+      "databases": ["arxiv", "semantic_scholar", "mathoverflow"]
+    },
+    "clinical_applications": {
+      "keywords": [
+        "seizure detection", "seizure prediction", "localization",
+        "seizure forecasting", "epileptogenic zone", "resection",
+        "surgical planning", "outcome prediction", "biomarker",
+        "diagnostic", "prognostic", "therapeutic", "intervention",
+        "neuromodulation", "responsive neurostimulation", "RNS"
+      ],
+      "weight": 1.2,
+      "databases": ["pubmed", "semantic_scholar", "medline"]
+    },
+    "advanced_math": {
+      "keywords": [
+        "topology", "manifold", "tensor", "differential geometry",
+        "Riemannian", "Lie group", "Lie algebra", "homology",
+        "cohomology", "fiber bundle", "tangent space",
+        "geodesic", "curvature", "metric tensor", "connection",
+        "differential form", "symplectic", "Hamiltonian"
+      ],
+      "weight": 0.8,
+      "databases": ["arxiv", "mathoverflow", "semantic_scholar"]
+    }
+  },
+  "default_databases": ["semantic_scholar", "arxiv", "pubmed"],
+  "confidence_threshold": 0.3
+}

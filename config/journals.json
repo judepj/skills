@@ -1,0 +1,292 @@
+{
+  "tier1": {
+    "impact_range": "> 10",
+    "multiplier": 3.0,
+    "journals": [
+      {
+        "name": "Nature",
+        "impact_factor": 49.962,
+        "focus": "multidisciplinary"
+      },
+      {
+        "name": "Science",
+        "impact_factor": 47.728,
+        "focus": "multidisciplinary"
+      },
+      {
+        "name": "Nature Neuroscience",
+        "impact_factor": 25.0,
+        "focus": "neuroscience"
+      },
+      {
+        "name": "Nature Communications",
+        "impact_factor": 16.6,
+        "focus": "multidisciplinary"
+      },
+      {
+        "name": "Nature Computational Science",
+        "impact_factor": 12.0,
+        "focus": "computational science"
+      },
+      {
+        "name": "Cell",
+        "impact_factor": 45.5,
+        "focus": "biology"
+      },
+      {
+        "name": "Neuron",
+        "impact_factor": 18.688,
+        "focus": "neuroscience"
+      },
+      {
+        "name": "PNAS",
+        "impact_factor": 11.1,
+        "focus": "multidisciplinary"
+      },
+      {
+        "name": "Nature Methods",
+        "impact_factor": 28.547,
+        "focus": "methods"
+      },
+      {
+        "name": "Nature Medicine",
+        "impact_factor": 58.7,
+        "focus": "medicine"
+      },
+      {
+        "name": "Nature Biotechnology",
+        "impact_factor": 46.9,
+        "focus": "biotechnology"
+      },
+      {
+        "name": "Science Advances",
+        "impact_factor": 13.6,
+        "focus": "multidisciplinary"
+      },
+      {
+        "name": "Nature Machine Intelligence",
+        "impact_factor": 25.898,
+        "focus": "artificial intelligence"
+      }
+    ]
+  },
+  "tier2": {
+    "impact_range": "5-10",
+    "multiplier": 2.0,
+    "journals": [
+      {
+        "name": "Brain",
+        "impact_factor": 15.255,
+        "focus": "neurology"
+      },
+      {
+        "name": "Epilepsia",
+        "impact_factor": 5.6,
+        "focus": "epilepsy"
+      },
+      {
+        "name": "NeuroImage",
+        "impact_factor": 5.7,
+        "focus": "neuroimaging"
+      },
+      {
+        "name": "Journal of Neuroscience",
+        "impact_factor": 5.3,
+        "focus": "neuroscience"
+      },
+      {
+        "name": "PLOS Computational Biology",
+        "impact_factor": 5.5,
+        "focus": "computational biology"
+      },
+      {
+        "name": "eLife",
+        "impact_factor": 8.713,
+        "focus": "life sciences"
+      },
+      {
+        "name": "Current Biology",
+        "impact_factor": 9.2,
+        "focus": "biology"
+      },
+      {
+        "name": "Annals of Neurology",
+        "impact_factor": 10.422,
+        "focus": "neurology"
+      },
+      {
+        "name": "Neurology",
+        "impact_factor": 9.9,
+        "focus": "clinical neurology"
+      },
+      {
+        "name": "Brain Stimulation",
+        "impact_factor": 8.955,
+        "focus": "neuromodulation"
+      },
+      {
+        "name": "Cerebral Cortex",
+        "impact_factor": 5.357,
+        "focus": "cortical neuroscience"
+      },
+      {
+        "name": "Human Brain Mapping",
+        "impact_factor": 5.399,
+        "focus": "brain imaging"
+      },
+      {
+        "name": "Progress in Neurobiology",
+        "impact_factor": 9.371,
+        "focus": "neurobiology reviews"
+      },
+      {
+        "name": "Nature Reviews Neuroscience",
+        "impact_factor": 34.7,
+        "focus": "neuroscience reviews"
+      }
+    ]
+  },
+  "tier3": {
+    "impact_range": "3-5",
+    "multiplier": 1.5,
+    "journals": [
+      {
+        "name": "Clinical Neurophysiology",
+        "impact_factor": 4.0,
+        "focus": "clinical neurophysiology"
+      },
+      {
+        "name": "IEEE Transactions on Biomedical Engineering",
+        "impact_factor": 4.756,
+        "focus": "biomedical engineering"
+      },
+      {
+        "name": "Journal of Neural Engineering",
+        "impact_factor": 4.141,
+        "focus": "neural engineering"
+      },
+      {
+        "name": "Epilepsy Research",
+        "impact_factor": 3.3,
+        "focus": "epilepsy research"
+      },
+      {
+        "name": "Epilepsy & Behavior",
+        "impact_factor": 3.337,
+        "focus": "epilepsy behavior"
+      },
+      {
+        "name": "Scientific Reports",
+        "impact_factor": 4.6,
+        "focus": "multidisciplinary"
+      },
+      {
+        "name": "PLOS ONE",
+        "impact_factor": 3.7,
+        "focus": "multidisciplinary"
+      },
+      {
+        "name": "Frontiers in Neuroscience",
+        "impact_factor": 4.677,
+        "focus": "neuroscience"
+      },
+      {
+        "name": "Journal of Neuroscience Methods",
+        "impact_factor": 3.0,
+        "focus": "neuroscience methods"
+      },
+      {
+        "name": "Network Neuroscience",
+        "impact_factor": 4.7,
+        "focus": "network neuroscience"
+      },
+      {
+        "name": "Chaos",
+        "impact_factor": 3.267,
+        "focus": "nonlinear dynamics"
+      },
+      {
+        "name": "Physical Review E",
+        "impact_factor": 2.707,
+        "focus": "statistical physics"
+      },
+      {
+        "name": "Journal of Computational Neuroscience",
+        "impact_factor": 1.5,
+        "focus": "computational neuroscience"
+      },
+      {
+        "name": "Biological Cybernetics",
+        "impact_factor": 3.0,
+        "focus": "computational biology"
+      }
+    ]
+  },
+  "specialized": {
+    "impact_range": "variable",
+    "multiplier": 1.2,
+    "journals": [
+      {
+        "name": "Epileptic Disorders",
+        "impact_factor": 2.0,
+        "focus": "epilepsy"
+      },
+      {
+        "name": "Seizure",
+        "impact_factor": 3.2,
+        "focus": "epilepsy"
+      },
+      {
+        "name": "Journal of Machine Learning Research",
+        "impact_factor": 6.0,
+        "focus": "machine learning"
+      },
+      {
+        "name": "Neural Computation",
+        "impact_factor": 3.278,
+        "focus": "neural computation"
+      },
+      {
+        "name": "IEEE Signal Processing Magazine",
+        "impact_factor": 15.204,
+        "focus": "signal processing"
+      },
+      {
+        "name": "SIAM Review",
+        "impact_factor": 11.5,
+        "focus": "applied mathematics"
+      },
+      {
+        "name": "Physica D",
+        "impact_factor": 3.751,
+        "focus": "nonlinear phenomena"
+      },
+      {
+        "name": "Journal of Nonlinear Science",
+        "impact_factor": 3.0,
+        "focus": "nonlinear science"
+      }
+    ]
+  },
+  "preprint_servers": {
+    "impact_range": "not applicable",
+    "multiplier": 0.8,
+    "sources": [
+      {
+        "name": "arXiv",
+        "focus": "physics, math, CS, quantitative biology",
+        "categories": ["q-bio.NC", "eess.SP", "cs.LG", "nlin.CD", "math.DS", "physics.comp-ph"]
+      },
+      {
+        "name": "bioRxiv",
+        "focus": "biology",
+        "categories": ["neuroscience", "bioinformatics", "systems biology"]
+      },
+      {
+        "name": "medRxiv",
+        "focus": "medicine",
+        "categories": ["neurology", "psychiatry", "epidemiology"]
+      }
+    ]
+  }
+}

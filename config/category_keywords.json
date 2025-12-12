@@ -1,0 +1,99 @@
+{
+  "DynSys": [
+    "dynamical",
+    "koopman",
+    "neural ode",
+    "DMD",
+    "SINDy",
+    "attractor",
+    "bifurcation",
+    "chaos",
+    "lyapunov",
+    "nonlinear"
+  ],
+  "Causal": [
+    "causal",
+    "granger",
+    "transfer entropy",
+    "CCM",
+    "causality",
+    "convergent cross mapping",
+    "information flow",
+    "directed"
+  ],
+  "ThalamoCortical": [
+    "thalamus",
+    "thalamocortical",
+    "cortical",
+    "thalamic",
+    "cortico",
+    "relay",
+    "sensory gating"
+  ],
+  "Connectivity": [
+    "connectivity",
+    "network",
+    "functional connectivity",
+    "structural connectivity",
+    "connectome",
+    "graph",
+    "PLV",
+    "wPLI"
+  ],
+  "SeizureDynamotypes": [
+    "dynamotype",
+    "seizure classification",
+    "seizure types",
+    "seizure patterns",
+    "seizure dynamics",
+    "seizure evolution"
+  ],
+  "Epileptor": [
+    "epileptor",
+    "virtual brain",
+    "seizure model",
+    "Jirsa",
+    "computational model",
+    "whole brain model"
+  ],
+  "TimeFreq": [
+    "time-frequency",
+    "wavelet",
+    "spectrogram",
+    "FFT",
+    "frequency analysis",
+    "spectral",
+    "Hilbert",
+    "bandpower"
+  ],
+  "ML": [
+    "machine learning",
+    "deep learning",
+    "LSTM",
+    "transformer",
+    "neural network",
+    "classification",
+    "prediction",
+    "AI"
+  ],
+  "Clinical": [
+    "clinical",
+    "patient",
+    "surgery",
+    "resection",
+    "outcome",
+    "treatment",
+    "drug",
+    "therapy",
+    "diagnosis"
+  ],
+  "Criticality": [
+    "criticality",
+    "critical",
+    "phase transition",
+    "avalanche",
+    "power law",
+    "scale-free",
+    "self-organized"
+  ]
+}
