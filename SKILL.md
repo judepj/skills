@@ -1,9 +1,27 @@
 ---
 name: science-grounded
-version: 1.0.0
+version: 1.1.0
 description: Prevent scientific hallucinations by requiring verified sources for all research claims
 author: Science-Grounded Research Assistant
 tags: [research, science, literature-search, anti-hallucination, neuroscience, epilepsy]
+---
+
+## Changelog
+
+### v1.1.0 (2025-12-12)
+**Mild Improvements Release**
+
+- ✅ **Local KB Integration**: Searches ~70 papers in knowledge_base/ before external APIs
+- ✅ **Relaxed Sanitization**: PubMed field tags [Author], [Title], [Journal] now allowed
+- ✅ **Improved Author Search**: New search_by_author() method handles multiple name formats
+- 🔒 **Security Maintained**: Injection protection still active (SQL, XSS, command injection blocked)
+- 🧪 **Fully Tested**: 3 new test suites, all tests passing
+
+### v1.0.0 (2024-10-31)
+**Initial Release**
+- 7 search engines: PubMed, arXiv, bioRxiv/medRxiv, Semantic Scholar, NIH, NSF
+- Rate limiting, caching, impact-based ranking
+
 ---
 
 # Science-Grounded Literature Search
@@ -40,7 +58,14 @@ databases = result['recommended_sources']
 
 ### Step 2: Search for Papers and Grants
 
-**We now have 7 search engines available:**
+**We now have 8 search engines available:**
+
+0. **Local Knowledge Base** - Search ~70 papers already extracted (FASTEST):
+```python
+from local_kb_search import search_local_kb
+local_papers = search_local_kb(query, limit=5)
+# Returns local papers FIRST before hitting external APIs
+```
 
 1. **PubMed** - Best for clinical/medical papers:
 ```python
@@ -49,6 +74,14 @@ searcher = PubMedSearch()
 papers = searcher.search(query, limit=10, recent_only=True)
 # Or search for reviews: searcher.search_reviews(query)
 # Or clinical trials: searcher.search_clinical_trials(query)
+# Or search by author: searcher.search_by_author("Sydney Cash", keywords="thalamus epilepsy")
+```
+
+**NEW: PubMed field tags now supported!**
+```python
+# You can now use PubMed field tags:
+papers = searcher.search("Cash S[Author] AND thalamus[Title]")
+papers = searcher.search("epilepsy[MeSH] AND Brain[Journal]")
 ```
 
 2. **arXiv** - Best for preprints in physics/math/CS/neuroscience:
