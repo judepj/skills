@@ -434,6 +434,113 @@ class PubMedSearch:
         epilepsy_query = f"{query} AND (epilepsy[MeSH] OR seizure[MeSH] OR anticonvulsants[MeSH])"
         return self.search(epilepsy_query, limit=limit, recent_only=True)
 
+    def search_by_author(self, author_name: str, keywords: str = "",
+                         limit: int = DEFAULT_LIMIT, recent_only: bool = True) -> List[Dict]:
+        """
+        Search for papers by author name with improved name handling.
+
+        Tries multiple author name formulations to maximize results.
+
+        Args:
+            author_name: Author name (e.g., "Sydney Cash", "Cash SS", "Cash, Sydney S")
+            keywords: Optional keywords to narrow search
+            limit: Maximum number of results
+            recent_only: Only return papers from last 5 years
+
+        Returns:
+            List of paper dictionaries
+
+        Examples:
+            >>> searcher = PubMedSearch()
+            >>> papers = searcher.search_by_author("Sydney Cash", "thalamus epilepsy")
+            >>> papers = searcher.search_by_author("Cash SS", keywords="")
+        """
+        # Parse author name and try multiple formulations
+        author_queries = self._generate_author_queries(author_name)
+
+        all_papers = []
+        seen_pmids = set()
+
+        # Try each formulation until we get results
+        for author_query in author_queries:
+            # Build full query
+            if keywords:
+                full_query = f"({author_query}) AND {keywords}"
+            else:
+                full_query = author_query
+
+            # Search
+            papers = self.search(full_query, limit=limit, recent_only=recent_only)
+
+            # Add unique papers
+            for paper in papers:
+                pmid = paper.get('pmid', '')
+                if pmid and pmid not in seen_pmids:
+                    all_papers.append(paper)
+                    seen_pmids.add(pmid)
+
+            # If we found enough, stop trying other formulations
+            if len(all_papers) >= limit:
+                break
+
+        logger.info(f"Author search for '{author_name}' found {len(all_papers)} unique papers")
+        return all_papers[:limit]
+
+    def _generate_author_queries(self, author_name: str) -> List[str]:
+        """
+        Generate multiple PubMed author query formulations.
+
+        Args:
+            author_name: Author name in various formats
+
+        Returns:
+            List of PubMed author queries to try
+
+        Examples:
+            "Sydney Cash" → ["Cash S[Author]", "Cash SS[Author]", "Sydney Cash"]
+            "Cash SS" → ["Cash SS[Author]", "Cash S[Author]"]
+            "Cash, Sydney S" → ["Cash SS[Author]", "Cash S[Author]"]
+        """
+        queries = []
+        name = author_name.strip()
+
+        # Remove commas and extra spaces
+        name = name.replace(',', ' ')
+        parts = [p.strip() for p in name.split() if p.strip()]
+
+        if not parts:
+            return [author_name]  # Fallback
+
+        # Case 1: "FirstName LastName" or "LastName FirstName"
+        if len(parts) == 2:
+            # Try both orders
+            # Format: "LastName FirstInitial[Author]"
+            queries.append(f"{parts[1]} {parts[0][0]}[Author]")
+            queries.append(f"{parts[0]} {parts[1][0]}[Author]")
+            # Exact name
+            queries.append(f"{parts[0]} {parts[1]}")
+
+        # Case 2: "LastName FirstInitial" (already in good format)
+        elif len(parts) == 2 and len(parts[1]) <= 2:
+            queries.append(f"{parts[0]} {parts[1]}[Author]")
+
+        # Case 3: Three parts - might be "FirstName MiddleName LastName"
+        elif len(parts) == 3:
+            # Last word is likely last name
+            queries.append(f"{parts[2]} {parts[0][0]}[Author]")
+            queries.append(f"{parts[2]} {parts[0][0]}{parts[1][0]}[Author]")
+
+        # Case 4: "LastName" only
+        elif len(parts) == 1:
+            queries.append(f"{parts[0]}[Author]")
+
+        # Always include the original name as fallback
+        if author_name not in queries:
+            queries.append(author_name)
+
+        logger.info(f"Generated {len(queries)} author query formulations for '{author_name}'")
+        return queries
+
 
 def test_pubmed():
     """
