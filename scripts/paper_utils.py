@@ -122,7 +122,8 @@ def sanitize_query(query: str) -> Optional[str]:
 
     # Allow only safe characters: alphanumeric, spaces, and basic punctuation
     # This pattern allows letters, numbers, spaces, hyphens, commas, periods, question marks
-    safe_pattern = r'^[a-zA-Z0-9\s\-,.\'\"():?!]+$'
+    # ADDED: Square brackets [] for PubMed field tags like [Author], [Title], [Journal]
+    safe_pattern = r'^[a-zA-Z0-9\s\-,.\'\"():?!\[\]]+$'
     if not re.match(safe_pattern, query):
         logger.warning(f"Unsafe characters detected in query: {query}")
         return None
