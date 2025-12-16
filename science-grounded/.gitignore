@@ -1,9 +1,4 @@
-# Virtual environments
-.venv/
-venv/
-env/
-
-# Cache and logs (at root level)
+# Cache and logs
 cache/
 logs/
 *.log
@@ -12,6 +7,8 @@ logs/
 __pycache__/
 *.pyc
 *.pyo
+.venv/
+venv/
 *.egg-info/
 
 # IDE
