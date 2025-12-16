@@ -14,44 +14,43 @@ Large language models are prone to hallucinating scientific citations - generati
 ## Architecture
 
 ```mermaid
-flowchart TB
-    subgraph Claude["🤖 Claude Code CLI"]
-        Q[User Query]
+%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#fdfdfd', 'edgeLabelBackground':'#ffffff', 'fontFamily': 'inter, sans-serif', 'fontSize': '14px', 'lineColor': '#b0bec5'}}}%%
+graph TD
+    classDef terminal fill:#e1f5fe,stroke:#b3e5fc,stroke-width:1px,color:#0277bd,rx:10,ry:10;
+    classDef middleware fill:#f3e5f5,stroke:#e1bee7,stroke-width:1px,color:#6a1b9a,rx:5,ry:5;
+    classDef cache fill:#eceff1,stroke:#cfd8dc,stroke-width:2px,color:#455a64,rx:5,ry:5;
+    classDef apiSource fill:#fff3e0,stroke:#ffe0b2,stroke-width:1px,color:#ef6c00,rx:5,ry:5;
+    classDef localSource fill:#fbe9e7,stroke:#ffccbc,stroke-width:1px,color:#d84315,stroke-dasharray: 5 3,rx:5,ry:5;
+    classDef containerStyle fill:#fafafa,stroke:#f0f0f0,stroke-width:1px,color:#78909c,rx:10,ry:10;
+
+    Start(["🔍 Claude Code CLI"]):::terminal --> Sanitizer("🧹 Query Sanitizer"):::middleware
+    Sanitizer --> RateLimiter("⏱️ Rate Limiter"):::middleware
+    RateLimiter --> Cache[("💾 Active Cache")]:::cache
+
+    Cache --> PubMed & arXiv & bioRxiv & SemSch & NIH & NSF
+    Cache --> LKB & LitMap
+
+    subgraph SG_APIs ["🌐 External APIs"]
+        direction LR
+        PubMed("🏥 PubMed"):::apiSource
+        arXiv("📜 arXiv"):::apiSource
+        bioRxiv("🧬 bioRxiv"):::apiSource
+        SemSch("🎓 Semantic Scholar"):::apiSource
+        NIH("🏛️ NIH Reporter"):::apiSource
+        NSF("💵 NSF Awards"):::apiSource
     end
 
-    subgraph Skill["Science-Grounded Skill"]
-        subgraph Process["Processing"]
-            SAN[Query Sanitizer]
-            RL[Rate Limiter]
-            CACHE[(Cache)]
-        end
-
-        subgraph APIs["External APIs"]
-            PM[PubMed]
-            AX[arXiv]
-            BX[bioRxiv]
-            SS[Semantic Scholar]
-            NIH[NIH Reporter]
-            NSF[NSF Awards]
-        end
-
-        subgraph Local["Local ⚙️"]
-            KB[Knowledge Base]
-            LM[Literature Mapper]
-        end
+    subgraph SG_Local ["📂 Local Sources (Optional)"]
+        direction LR
+        LKB("🧠 Knowledge Base"):::localSource
+        LitMap("🗺️ Literature Mapper"):::localSource
     end
 
-    subgraph Output["📄 Output"]
-        VC[Verified Citations]
-    end
+    PubMed & arXiv & bioRxiv & SemSch & NIH & NSF --> End(["✅ Verified Citations"]):::terminal
+    LKB & LitMap --> End
 
-    Q --> SAN
-    SAN --> RL
-    RL --> CACHE
-    CACHE --> APIs
-    CACHE --> Local
-    APIs --> VC
-    Local --> VC
+    class SG_APIs,SG_Local containerStyle;
+    linkStyle default stroke:#b0bec5,stroke-width:1px,fill:none;
 ```
 
 ## Supported Databases
