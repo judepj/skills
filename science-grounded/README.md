@@ -146,7 +146,7 @@ for paper in results:
 from pubmed_search import PubMedSearch
 
 pubmed = PubMedSearch()
-papers = pubmed.search_by_author("Sridevi Sarma", max_results=20)
+papers = pubmed.search_by_author("Savarraj", max_results=20)
 ```
 
 ### Local Knowledge Base Search
