@@ -20,8 +20,8 @@
 - **Control/ML**: Sridevi Sarma, William Stacey
 - **Causality**: Jakob Runge
 
-### Their Literature Folders
-Main location: `/Users/jsavarraj/Dropbox/GPTQueries/Brunton/neural_ODE/`
+### Literature Folder Organization
+Configure your literature paths in `config/local_paths.json`:
 - `NeuroDynamics/literature/` - General computational neuro
 - `seizure_dynamics/literature/` - Epilepsy-specific papers
 - Organized by method: SymbReg_*, DynSys_*, PhysML_*, etc.

@@ -23,20 +23,50 @@ Large language models are prone to hallucinating scientific citations - generati
 | NSF Awards | NSF-funded research awards | `nsf_awards_search.py` |
 | Local Knowledge Base | Project-specific paper collection | `local_kb_search.py` |
 
+## Compatibility
+
+This skill was developed and tested with **Claude Code CLI**. While the underlying Python scripts can work standalone, the full integration is designed for Claude Code.
+
+- **Recommended**: Claude Code CLI (fully tested)
+- **May work**: Other LLM CLIs with skill/plugin support
+- **Standalone**: Python scripts can be imported directly
+
 ## Installation
 
 ```bash
 # Clone the repository
 git clone https://github.com/judepj/skills.git
-cd skills
+cd skills/science-grounded
 
-# Create virtual environment
+# Create virtual environment (optional)
 python3 -m venv .venv
 source .venv/bin/activate
 
 # Install dependencies
 pip install -r requirements.txt
 ```
+
+### Optional: Local Configuration
+
+To enable local knowledge base search and literature filing suggestions:
+
+1. Copy the template config:
+   ```bash
+   cp config/local_paths.template.json config/local_paths.json
+   ```
+
+2. Edit `config/local_paths.json` with your paths:
+   ```json
+   {
+     "knowledge_base": "/path/to/your/knowledge_base",
+     "literature_dirs": {
+       "project_1": "/path/to/project_1/literature",
+       "project_2": "/path/to/project_2/literature"
+     }
+   }
+   ```
+
+The skill works without local configuration - these features will simply be disabled.
 
 ### Dependencies
 
@@ -70,6 +100,7 @@ science-grounded/
 │   ├── paper_tracker.py      # Paper tracking and management
 │   └── test_*.py             # Test suites
 ├── config/                   # Configuration files
+│   ├── local_paths.template.json  # Template for local paths (copy to local_paths.json)
 │   ├── field_keywords.json   # Keywords for field detection
 │   ├── category_keywords.json # Keywords for categorization
 │   ├── authors.json          # Known author configurations
@@ -252,6 +283,7 @@ The skill definition in `SKILL.md` contains the full integration instructions.
 
 | File | Description |
 |------|-------------|
+| `config/local_paths.template.json` | Template for local paths configuration. Copy to `local_paths.json` and customize. |
 | `config/field_keywords.json` | Keywords used to detect academic fields. |
 | `config/category_keywords.json` | Keywords for paper categorization. |
 | `config/authors.json` | Known authors with name variants and affiliations. |

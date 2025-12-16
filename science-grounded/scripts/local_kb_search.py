@@ -15,11 +15,34 @@ from typing import List, Dict, Optional
 # Configure logging
 logger = logging.getLogger(__name__)
 
-# Path to knowledge base
-# From .claude/skills/science-grounded/scripts/ → go up 5 levels to neural_ODE/ → knowledge_base/
-KB_BASE = Path(__file__).parent.parent.parent.parent.parent / "knowledge_base"
-PAPERS_DIR = KB_BASE / "raw" / "papers"
-INDEX_FILE = KB_BASE / "indexes" / "master_index.json"
+# Paths
+BASE_DIR = Path(__file__).parent.parent
+CONFIG_DIR = BASE_DIR / "config"
+LOCAL_PATHS_CONFIG = CONFIG_DIR / "local_paths.json"
+
+
+def _load_kb_path() -> Optional[Path]:
+    """Load knowledge base path from local config.
+
+    Returns None if config doesn't exist (graceful degradation).
+    Users can copy local_paths.template.json to local_paths.json and add their paths.
+    """
+    if LOCAL_PATHS_CONFIG.exists():
+        try:
+            with open(LOCAL_PATHS_CONFIG, 'r') as f:
+                config = json.load(f)
+                kb_path = config.get('knowledge_base')
+                if kb_path:
+                    return Path(kb_path)
+        except (json.JSONDecodeError, IOError):
+            pass
+    return None
+
+
+# Load KB path from config (None if not configured)
+KB_BASE = _load_kb_path()
+PAPERS_DIR = KB_BASE / "raw" / "papers" if KB_BASE else None
+INDEX_FILE = KB_BASE / "indexes" / "master_index.json" if KB_BASE else None
 
 
 class LocalKBSearch:
@@ -30,16 +53,24 @@ class LocalKBSearch:
         Initialize local KB search.
 
         Args:
-            kb_path: Path to knowledge base (defaults to standard location)
+            kb_path: Path to knowledge base (defaults to config or None)
         """
         self.kb_path = kb_path or KB_BASE
-        self.papers_dir = self.kb_path / "raw" / "papers"
-        self.index_file = self.kb_path / "indexes" / "master_index.json"
 
-        # Check if knowledge base exists
-        self.available = self.papers_dir.exists()
-        if not self.available:
-            logger.info(f"Local knowledge base not found at {self.papers_dir}. Local search disabled.")
+        # Handle case where no KB is configured
+        if self.kb_path is None:
+            self.papers_dir = None
+            self.index_file = None
+            self.available = False
+            logger.info("Local knowledge base not configured. Set path in config/local_paths.json")
+        else:
+            self.papers_dir = self.kb_path / "raw" / "papers"
+            self.index_file = self.kb_path / "indexes" / "master_index.json"
+
+            # Check if knowledge base exists
+            self.available = self.papers_dir.exists()
+            if not self.available:
+                logger.info(f"Local knowledge base not found at {self.papers_dir}. Local search disabled.")
 
         # Load index if exists
         self.index = self._load_index()

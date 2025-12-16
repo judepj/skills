@@ -1,0 +1,8 @@
+{
+  "_comment": "Copy this file to local_paths.json and fill in your paths. The local_paths.json file is gitignored.",
+  "knowledge_base": "/path/to/your/knowledge_base",
+  "literature_dirs": {
+    "project_1": "/path/to/project_1/literature",
+    "project_2": "/path/to/project_2/literature"
+  }
+}

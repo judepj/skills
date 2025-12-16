@@ -25,17 +25,27 @@ from collections import defaultdict
 BASE_DIR = Path(__file__).parent.parent
 CONFIG_DIR = BASE_DIR / "config"
 CATEGORY_CONFIG = CONFIG_DIR / "category_keywords.json"
+LOCAL_PATHS_CONFIG = CONFIG_DIR / "local_paths.json"
 
-# Known project directories to scan
-PROJECT_PATHS = {
-    "NeuroDynamics": "/Users/jsavarraj/Dropbox/GPTQueries/Brunton/NeuroDynamics/literature",
-    "seizure_dynamics": "/Users/jsavarraj/Dropbox/GPTQueries/Brunton/seizure_dynamics/literature",
-    "TimeSeriesML": "/Users/jsavarraj/Dropbox/GPTQueries/Brunton/TimeSeriesML/literature",
-    "SignalProcessingML": "/Users/jsavarraj/Dropbox/GPTQueries/Brunton/SignalProcessingML/literature",
-    "NetworkDynamics": "/Users/jsavarraj/Dropbox/GPTQueries/Brunton/NetworkDynamics/literature",
-    "CollectiveBehavior": "/Users/jsavarraj/Dropbox/GPTQueries/Brunton/CollectiveBehavior/literature",
-    "neural_ODE": "/Users/jsavarraj/Dropbox/GPTQueries/Brunton/neural_ODE/literature"
-}
+
+def _load_project_paths() -> Dict[str, str]:
+    """Load project paths from local config file.
+
+    Returns empty dict if config doesn't exist (graceful degradation).
+    Users can copy local_paths.template.json to local_paths.json and add their paths.
+    """
+    if LOCAL_PATHS_CONFIG.exists():
+        try:
+            with open(LOCAL_PATHS_CONFIG, 'r') as f:
+                config = json.load(f)
+                return config.get('literature_dirs', {})
+        except (json.JSONDecodeError, IOError):
+            return {}
+    return {}
+
+
+# Load project directories from config (empty if not configured)
+PROJECT_PATHS = _load_project_paths()
 
 
 class LiteratureMapper:

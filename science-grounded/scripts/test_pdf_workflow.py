@@ -12,9 +12,11 @@ This script demonstrates the full workflow:
 
 import sys
 from datetime import datetime
+from pathlib import Path
 
-# Add scripts to path
-sys.path.append('/Users/jsavarraj/Dropbox/GPTQueries/Brunton/neural_ODE/.claude/skills/science-grounded/scripts')
+# Add scripts to path (relative to this file's location)
+scripts_dir = Path(__file__).parent
+sys.path.insert(0, str(scripts_dir))
 
 from pubmed_search import PubMedSearch
 from paper_tracker import PaperTracker

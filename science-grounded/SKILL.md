@@ -56,8 +56,7 @@ You MUST:
 ### Step 1: Detect the Research Field
 
 ```python
-import sys
-sys.path.append('/Users/jsavarraj/Dropbox/GPTQueries/Brunton/neural_ODE/.claude/skills/science-grounded/scripts')
+# Scripts are in the science-grounded/scripts directory
 from field_detector import FieldDetector
 
 detector = FieldDetector()
@@ -385,13 +384,18 @@ Papers are ranked by impact score:
 print(f"Detected fields: {fields}")
 print(f"Recommended databases: {databases}")
 
-# View search logs
-with open('/Users/jsavarraj/Dropbox/GPTQueries/Brunton/neural_ODE/.claude/skills/science-grounded/logs/api_access.log', 'r') as f:
-    print(f.read()[-1000:])  # Last 1000 chars
+# View search logs (logs/ is in the science-grounded directory)
+from pathlib import Path
+log_path = Path(__file__).parent / "logs" / "api_access.log"
+if log_path.exists():
+    with open(log_path, 'r') as f:
+        print(f.read()[-1000:])  # Last 1000 chars
 
-# Clear cache if needed
+# Clear cache if needed (cache/ is in the science-grounded directory)
 import shutil
-shutil.rmtree('/Users/jsavarraj/Dropbox/GPTQueries/Brunton/neural_ODE/.claude/skills/science-grounded/cache')
+cache_path = Path(__file__).parent / "cache"
+if cache_path.exists():
+    shutil.rmtree(cache_path)
 ```
 
 Remember: **NEVER make up citations. ALWAYS search first. REFUSE if unsure.**
