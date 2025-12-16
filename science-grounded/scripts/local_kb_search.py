@@ -81,6 +81,8 @@ class LocalKBSearch:
 
     def _load_index(self) -> Dict:
         """Load master index if available."""
+        if self.index_file is None:
+            return {}
         if self.index_file.exists():
             try:
                 with open(self.index_file, 'r') as f:
