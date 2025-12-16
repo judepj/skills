@@ -11,6 +11,49 @@ Large language models are prone to hallucinating scientific citations - generati
 3. Caching results to minimize API calls and improve response time
 4. Ranking papers by citation impact and relevance
 
+## Architecture
+
+```mermaid
+flowchart TB
+    subgraph Claude["🤖 Claude Code CLI"]
+        Q[User Query]
+    end
+
+    subgraph Skill["Science-Grounded Skill"]
+        subgraph Process["Processing"]
+            SAN[Query Sanitizer]
+            RL[Rate Limiter]
+            CACHE[(Cache)]
+        end
+
+        subgraph APIs["External APIs"]
+            PM[PubMed]
+            AX[arXiv]
+            BX[bioRxiv]
+            SS[Semantic Scholar]
+            NIH[NIH Reporter]
+            NSF[NSF Awards]
+        end
+
+        subgraph Local["Local ⚙️"]
+            KB[Knowledge Base]
+            LM[Literature Mapper]
+        end
+    end
+
+    subgraph Output["📄 Output"]
+        VC[Verified Citations]
+    end
+
+    Q --> SAN
+    SAN --> RL
+    RL --> CACHE
+    CACHE --> APIs
+    CACHE --> Local
+    APIs --> VC
+    Local --> VC
+```
+
 ## Supported Databases
 
 | Database | Coverage | Script |
