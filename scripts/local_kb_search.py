@@ -36,8 +36,17 @@ class LocalKBSearch:
         self.papers_dir = self.kb_path / "raw" / "papers"
         self.index_file = self.kb_path / "indexes" / "master_index.json"
 
+        # Check if knowledge base exists
+        self.available = self.papers_dir.exists()
+        if not self.available:
+            logger.info(f"Local knowledge base not found at {self.papers_dir}. Local search disabled.")
+
         # Load index if exists
         self.index = self._load_index()
+
+    def is_available(self) -> bool:
+        """Check if local knowledge base is available."""
+        return self.available
 
     def _load_index(self) -> Dict:
         """Load master index if available."""
@@ -59,8 +68,12 @@ class LocalKBSearch:
             limit: Maximum results to return
 
         Returns:
-            List of paper dictionaries with metadata
+            List of paper dictionaries with metadata (empty list if KB not available)
         """
+        # Return empty if knowledge base not available
+        if not self.available:
+            return []
+
         query_lower = query.lower()
         keywords = query_lower.split()
 
@@ -165,8 +178,12 @@ class LocalKBSearch:
             paper_id: Paper identifier (folder name)
 
         Returns:
-            Full paper text or None if not found
+            Full paper text or None if not found or KB not available
         """
+        # Return None if knowledge base not available
+        if not self.available:
+            return None
+
         paper_dir = self.papers_dir / paper_id
 
         if not paper_dir.exists():
