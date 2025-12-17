@@ -13,58 +13,7 @@ Large language models are prone to hallucinating scientific citations - generati
 
 ## Architecture
 
-```mermaid
-flowchart LR
-    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px,font-size:16px,font-family:Arial,padding:10px;
-    classDef highlight fill:#d4edda,stroke:#28a745,stroke-width:3px,font-size:18px,font-weight:bold;
-    classDef userNode fill:#fff,stroke:none,font-size:40px;
-    classDef container fill:#f0f4f8,stroke:#cbd5e0,stroke-width:2px,stroke-dasharray: 5 5;
-    classDef cli fill:#e3f2fd,stroke:#2196f3,stroke-width:2px;
-
-    User(["👤"]):::userNode
-    CLI[🔍 Claude Code CLI]:::cli
-
-    subgraph Middleware ["⚙️ Request Processing"]
-        direction TB
-        Sanitizer[Query Sanitizer]
-        Limiter[⏱️ Rate Limiter]
-        Cache[💾 Active Cache]
-    end
-
-    subgraph Sources ["Start Search"]
-        direction TB
-
-        subgraph External ["🌐 External APIs"]
-            direction TB
-            PubMed[PubMed]
-            arXiv[arXiv]
-            bioRxiv[bioRxiv]
-            SemSch[Semantic Scholar]
-            NSF[NSF Award]
-        end
-
-        subgraph Local ["📂 Local Sources"]
-            direction TB
-            KB[🧠 Knowledge Base]
-            Mapper[🗺️ Literature Mapper]
-        end
-    end
-
-    Verified[✅ Verified Citations]:::highlight
-    Truths[🌍 Scientific Truths]:::highlight
-
-    User --> CLI
-    CLI --> Middleware
-    Sanitizer --> Limiter --> Cache
-    Cache --> External
-    Cache --> Local
-    PubMed & arXiv & bioRxiv & SemSch & NSF --> Verified
-    KB & Mapper --> Verified
-    Verified --> Truths
-
-    class Middleware container
-    class External,Local container
-```
+![Science-Grounded Architecture](assets/architecture.png)
 
 ## Supported Databases
 
