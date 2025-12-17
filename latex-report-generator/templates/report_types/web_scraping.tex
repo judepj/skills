@@ -1,0 +1,147 @@
+\documentclass[11pt,letterpaper]{article}
+
+% Packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{xcolor}
+
+% Page styling
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\VAR{title|truncate(40)}}
+\lhead{Web Scraping Report}
+\rfoot{Page \thepage}
+
+% Section formatting
+\titleformat{\section}
+  {\Large\bfseries\color{blue!70!black}}
+  {\thesection}{1em}{}
+
+\titleformat{\subsection}
+  {\large\bfseries\color{blue!50!black}}
+  {\thesubsection}{1em}{}
+
+% Hyperlink colors
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan,
+    pdftitle={\VAR{title}},
+    pdfauthor={\VAR{author}}
+}
+
+% Document metadata
+\title{\VAR{title}}
+\author{\VAR{author}}
+\date{\VAR{date}}
+
+\begin{document}
+
+% Title page
+\maketitle
+
+\BLOCK{if abstract}
+\begin{abstract}
+\VAR{abstract}
+\end{abstract}
+\BLOCK{endif}
+
+\tableofcontents
+\newpage
+
+% Sections
+\BLOCK{for section in sections}
+\section{\VAR{section.title}}
+
+\VAR{section.content}
+
+\BLOCK{if section.figures}
+\BLOCK{for fig in section.figures}
+\begin{figure}[\VAR{fig.placement}]
+    \centering
+    \includegraphics[width=\VAR{fig.width}\textwidth]{figures/\VAR{fig.filename}}
+    \caption{\VAR{fig.caption}}
+    \label{\VAR{fig.label}}
+\end{figure}
+\BLOCK{endfor}
+\BLOCK{endif}
+
+\BLOCK{endfor}
+
+% Figures section (if figures not embedded in sections)
+\BLOCK{if standalone_figures}
+\section{Figures}
+
+\BLOCK{for fig in standalone_figures}
+\begin{figure}[\VAR{fig.placement}]
+    \centering
+    \includegraphics[width=\VAR{fig.width}\textwidth]{figures/\VAR{fig.filename}}
+    \BLOCK{if fig.short_caption}
+    \caption[\VAR{fig.short_caption}]{\VAR{fig.caption}}
+    \BLOCK{else}
+    \caption{\VAR{fig.caption}}
+    \BLOCK{endif}
+    \label{\VAR{fig.label}}
+\end{figure}
+\BLOCK{endfor}
+\BLOCK{endif}
+
+% Additional information
+\BLOCK{if url}
+\section{Source Information}
+
+This report was generated from content scraped from:
+
+\url{\VAR{url}}
+
+\textit{Date scraped: \VAR{date}}
+\BLOCK{endif}
+
+% References (if provided)
+\BLOCK{if references}
+\section{References}
+
+\begin{enumerate}
+\BLOCK{for ref in references}
+\item \VAR{ref}
+\BLOCK{endfor}
+\end{enumerate}
+\BLOCK{endif}
+
+% Appendix
+\appendix
+
+\section{Methodology}
+
+This report was automatically generated using the \texttt{latex-report-generator} skill for Claude Code.
+
+\subsection{Data Collection}
+
+Content was collected using the \texttt{web-scraper} skill, which:
+\begin{itemize}
+    \item Respects robots.txt directives
+    \item Enforces rate limiting (2-second minimum between requests)
+    \item Validates domains against scientific whitelist
+    \item Logs all activity for transparency
+\end{itemize}
+
+\subsection{Figure Selection}
+
+Figures were auto-selected using a scoring algorithm that evaluates:
+\begin{itemize}
+    \item Image size and dimensions (prefer high-resolution images)
+    \item Alt text quality (prefer descriptive captions)
+    \item Filename descriptiveness
+    \item Aspect ratio and format
+\end{itemize}
+
+The top-ranked figures were selected for inclusion in this report.
+
+\end{document}

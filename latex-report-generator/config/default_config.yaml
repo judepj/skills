@@ -1,0 +1,61 @@
+# Default configuration for latex-report-generator skill
+# Last updated: 2025-12-12
+
+# General settings
+skill_version: "1.0.0"
+log_level: "INFO"
+
+# Figure selection defaults
+figure_selection:
+  max_figures: 5
+  min_size_kb: 50
+  max_size_kb: 5000
+  min_width_px: 800
+  min_height_px: 600
+  preferred_formats: ["png", "pdf", "jpg", "jpeg"]
+  score_thresholds:
+    excellent: 90  # Auto-include if score >= 90
+    good: 70       # Likely include if score >= 70
+    acceptable: 50 # Consider if score >= 50
+    poor: 30       # Probably exclude if score < 30
+
+# Content processing defaults
+content_processing:
+  paragraph_mode: true
+  max_bullets_per_paragraph: 4
+  preserve_terminology: true
+  add_transitions: true
+  transition_frequency: 0.6  # 60% of sentence joins get transitions
+  min_paragraph_sentences: 2
+  max_paragraph_sentences: 6
+
+# Citation defaults
+citations:
+  default_style: "vancouver"
+  extract_from_content: true
+  verify_dois: false  # Slow, requires network
+  deduplicate: true
+  max_references: 100
+
+# LaTeX compilation defaults
+latex:
+  engine: "pdflatex"
+  compile_runs: 2  # Run twice for references
+  timeout_seconds: 120
+  cleanup_aux_files: true
+  keep_intermediate: false
+
+# Template defaults
+templates:
+  default_document_class: "article"
+  default_font_size: "11pt"
+  default_paper_size: "letterpaper"
+  default_margins: "1in"
+
+# Output defaults
+output:
+  create_draft: true
+  create_final: true
+  copy_figures: true
+  generate_manifest: true
+  verbose: false

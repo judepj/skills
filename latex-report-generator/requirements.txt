@@ -1,0 +1,21 @@
+# Core dependencies for latex-report-generator skill
+
+# Template engine
+jinja2>=3.1.0              # LaTeX template rendering with custom delimiters
+
+# Configuration
+pyyaml>=6.0                # YAML config file parsing
+
+# Content processing
+markdown>=3.4.0            # Markdown to structured data conversion
+
+# Image processing (for figure analysis)
+Pillow>=10.0.0             # Image dimension and format detection
+
+# Citation management (optional)
+requests>=2.28.0           # DOI resolution and citation verification
+crossref-commons>=0.0.7    # Crossref API for DOI validation (optional)
+
+# Testing
+pytest>=7.0.0              # Unit testing framework
+pytest-cov>=4.0.0          # Code coverage

@@ -1,0 +1,87 @@
+# Report type configurations for latex-report-generator
+# Last updated: 2025-12-12
+
+web_scraping:
+  name: "Web Scraping Summary"
+  description: "Summary report from web-scraper skill output"
+  template: "templates/report_types/web_scraping.tex"
+  default_sections:
+    - "Executive Summary"
+    - "Key Findings"
+    - "Technology Overview"
+    - "Additional Resources"
+  paragraph_mode: true  # Convert bullets to paragraphs
+  allowed_bullets:  # Sections where bullets ARE acceptable
+    - "Additional Resources"
+  max_figures: 10
+  default_citation_style: "vancouver"
+
+scientific_paper:
+  name: "Scientific Manuscript (IMRAD)"
+  description: "Full scientific paper with IMRAD structure"
+  template: "templates/report_types/scientific_paper.tex"
+  default_sections:
+    - "Abstract"
+    - "Introduction"
+    - "Methods"
+    - "Results"
+    - "Discussion"
+    - "Acknowledgments"
+  paragraph_mode: true
+  allowed_bullets:
+    - "Methods::Inclusion Criteria"
+    - "Methods::Exclusion Criteria"
+    - "Methods::Materials"
+    - "Methods::Equipment"
+  max_figures: 8
+  default_citation_style: "nature"
+
+literature_review:
+  name: "Literature Review"
+  description: "Systematic or narrative literature review"
+  template: "templates/report_types/literature_review.tex"
+  default_sections:
+    - "Abstract"
+    - "Introduction"
+    - "Methods"
+    - "Results"
+    - "Discussion"
+    - "Conclusion"
+  paragraph_mode: true
+  allowed_bullets: []  # No bullets in literature reviews
+  max_figures: 6
+  default_citation_style: "apa"
+
+technical_report:
+  name: "Technical Report"
+  description: "General technical documentation and analysis"
+  template: "templates/report_types/technical_report.tex"
+  default_sections:
+    - "Introduction"
+    - "Technical Background"
+    - "Analysis"
+    - "Findings"
+    - "Recommendations"
+    - "Conclusion"
+  paragraph_mode: true
+  allowed_bullets:
+    - "Findings"
+    - "Recommendations"
+    - "Specifications"
+  max_figures: 12
+  default_citation_style: "ieee"
+
+conference_paper:
+  name: "Conference Paper"
+  description: "Short paper for conference proceedings"
+  template: "templates/report_types/conference_paper.tex"
+  default_sections:
+    - "Abstract"
+    - "Introduction"
+    - "Methods"
+    - "Results"
+    - "Conclusion"
+  paragraph_mode: true
+  allowed_bullets: []
+  max_figures: 4
+  default_citation_style: "ieee"

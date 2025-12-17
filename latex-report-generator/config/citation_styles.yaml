@@ -1,0 +1,76 @@
+# Citation style templates for latex-report-generator
+# Last updated: 2025-12-12
+
+apa:
+  name: "APA 7th Edition"
+  description: "American Psychological Association style for psychology and social sciences"
+  inline_format: "({authors}, {year})"
+  bibliography_format: "{authors}. ({year}). {title}. *{journal}*, *{volume}*({issue}), {pages}. https://doi.org/{doi}"
+  sort_method: "alphabetical"  # Sort by author last name
+  max_authors_inline: 3  # "et al." after 3 authors
+  max_authors_bibliography: 20
+  author_separator: ", "
+  final_author_separator: ", & "
+  et_al_format: "et al."
+
+vancouver:
+  name: "Vancouver (ICMJE)"
+  description: "International Committee of Medical Journal Editors style for biomedical journals"
+  inline_format: "[{index}]"
+  bibliography_format: "{authors}. {title}. {journal}. {year};{volume}({issue}):{pages}."
+  sort_method: "citation_order"  # Sort by order of appearance
+  max_authors_inline: null  # Always use numbers
+  max_authors_bibliography: 6  # "et al." after 6 authors in bibliography
+  author_separator: ", "
+  et_al_format: "et al"
+  abbreviate_journals: true
+
+nature:
+  name: "Nature"
+  description: "Nature journal citation style"
+  inline_format: "^{index}"  # Superscript numbers
+  bibliography_format: "{authors}. {title}. *{journal}* **{volume}**, {pages} ({year})."
+  sort_method: "citation_order"
+  max_authors_inline: null
+  max_authors_bibliography: 5
+  author_separator: ", "
+  et_al_format: "*et al.*"
+  abbreviate_journals: true
+  title_style: "sentence_case"  # Only first word capitalized
+
+ieee:
+  name: "IEEE"
+  description: "Institute of Electrical and Electronics Engineers style"
+  inline_format: "[{index}]"
+  bibliography_format: "{authors}, \"{title},\" *{journal}*, vol. {volume}, no. {issue}, pp. {pages}, {month} {year}, doi: {doi}."
+  sort_method: "citation_order"
+  max_authors_inline: null
+  max_authors_bibliography: 6
+  author_separator: ", "
+  final_author_separator: " and "
+  et_al_format: "*et al.*"
+  abbreviate_journals: true
+
+chicago:
+  name: "Chicago (Author-Date)"
+  description: "Chicago Manual of Style author-date system"
+  inline_format: "({authors} {year})"
+  bibliography_format: "{authors}. {year}. \"{title}.\" *{journal}* {volume} ({issue}): {pages}. https://doi.org/{doi}."
+  sort_method: "alphabetical"
+  max_authors_inline: 3
+  max_authors_bibliography: 10
+  author_separator: ", "
+  final_author_separator: ", and "
+  et_al_format: "et al."
+
+ama:
+  name: "AMA (American Medical Association)"
+  description: "American Medical Association Manual of Style"
+  inline_format: "^{index}"
+  bibliography_format: "{authors}. {title}. *{journal}*. {year};{volume}({issue}):{pages}. doi:{doi}"
+  sort_method: "citation_order"
+  max_authors_inline: null
+  max_authors_bibliography: 6
+  author_separator: ", "
+  et_al_format: "et al"
+  abbreviate_journals: true
