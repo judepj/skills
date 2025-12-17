@@ -14,43 +14,56 @@ Large language models are prone to hallucinating scientific citations - generati
 ## Architecture
 
 ```mermaid
-%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#fdfdfd', 'edgeLabelBackground':'#ffffff', 'fontFamily': 'inter, sans-serif', 'fontSize': '14px', 'lineColor': '#b0bec5'}}}%%
-graph TD
-    classDef terminal fill:#e1f5fe,stroke:#b3e5fc,stroke-width:1px,color:#0277bd,rx:10,ry:10;
-    classDef middleware fill:#f3e5f5,stroke:#e1bee7,stroke-width:1px,color:#6a1b9a,rx:5,ry:5;
-    classDef cache fill:#eceff1,stroke:#cfd8dc,stroke-width:2px,color:#455a64,rx:5,ry:5;
-    classDef apiSource fill:#fff3e0,stroke:#ffe0b2,stroke-width:1px,color:#ef6c00,rx:5,ry:5;
-    classDef localSource fill:#fbe9e7,stroke:#ffccbc,stroke-width:1px,color:#d84315,stroke-dasharray: 5 3,rx:5,ry:5;
-    classDef containerStyle fill:#fafafa,stroke:#f0f0f0,stroke-width:1px,color:#78909c,rx:10,ry:10;
+flowchart LR
+    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px,font-size:16px,font-family:Arial,padding:10px;
+    classDef highlight fill:#d4edda,stroke:#28a745,stroke-width:3px,font-size:18px,font-weight:bold;
+    classDef userNode fill:#fff,stroke:none,font-size:40px;
+    classDef container fill:#f0f4f8,stroke:#cbd5e0,stroke-width:2px,stroke-dasharray: 5 5;
+    classDef cli fill:#e3f2fd,stroke:#2196f3,stroke-width:2px;
 
-    Start(["🔍 Claude Code CLI"]):::terminal --> Sanitizer("🧹 Query Sanitizer"):::middleware
-    Sanitizer --> RateLimiter("⏱️ Rate Limiter"):::middleware
-    RateLimiter --> Cache[("💾 Active Cache")]:::cache
+    User(["👤"]):::userNode
+    CLI[🔍 Claude Code CLI]:::cli
 
-    Cache --> PubMed & arXiv & bioRxiv & SemSch & NIH & NSF
-    Cache --> LKB & LitMap
-
-    subgraph SG_APIs ["🌐 External APIs"]
-        direction LR
-        PubMed("🏥 PubMed"):::apiSource
-        arXiv("📜 arXiv"):::apiSource
-        bioRxiv("🧬 bioRxiv"):::apiSource
-        SemSch("🎓 Semantic Scholar"):::apiSource
-        NIH("🏛️ NIH Reporter"):::apiSource
-        NSF("💵 NSF Awards"):::apiSource
+    subgraph Middleware ["⚙️ Request Processing"]
+        direction TB
+        Sanitizer[Query Sanitizer]
+        Limiter[⏱️ Rate Limiter]
+        Cache[💾 Active Cache]
     end
 
-    subgraph SG_Local ["📂 Local Sources (Optional)"]
-        direction LR
-        LKB("🧠 Knowledge Base"):::localSource
-        LitMap("🗺️ Literature Mapper"):::localSource
+    subgraph Sources ["Start Search"]
+        direction TB
+
+        subgraph External ["🌐 External APIs"]
+            direction TB
+            PubMed[PubMed]
+            arXiv[arXiv]
+            bioRxiv[bioRxiv]
+            SemSch[Semantic Scholar]
+            NSF[NSF Award]
+        end
+
+        subgraph Local ["📂 Local Sources"]
+            direction TB
+            KB[🧠 Knowledge Base]
+            Mapper[🗺️ Literature Mapper]
+        end
     end
 
-    PubMed & arXiv & bioRxiv & SemSch & NIH & NSF --> End(["✅ Verified Citations"]):::terminal
-    LKB & LitMap --> End
+    Verified[✅ Verified Citations]:::highlight
+    Truths[🌍 Scientific Truths]:::highlight
 
-    class SG_APIs,SG_Local containerStyle;
-    linkStyle default stroke:#b0bec5,stroke-width:1px,fill:none;
+    User --> CLI
+    CLI --> Middleware
+    Sanitizer --> Limiter --> Cache
+    Cache --> External
+    Cache --> Local
+    PubMed & arXiv & bioRxiv & SemSch & NSF --> Verified
+    KB & Mapper --> Verified
+    Verified --> Truths
+
+    class Middleware container
+    class External,Local container
 ```
 
 ## Supported Databases
