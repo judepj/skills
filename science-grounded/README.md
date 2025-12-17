@@ -2,6 +2,8 @@
 
 A Claude Code skill for preventing scientific hallucinations by requiring verified sources for all research claims. This tool provides programmatic access to multiple academic databases and enforces citation verification before making scientific statements.
 
+**Author:** [Jude Savarraj](https://www.linkedin.com/in/jude-savarraj-534abb4b/)
+
 ## Purpose
 
 Large language models are prone to hallucinating scientific citations - generating plausible-sounding but non-existent papers. This skill addresses that problem by:
